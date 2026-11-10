@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>atmo 3D-v10.1 — par Ngoga Enock</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@500;600&display=swap">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="atmo 3D-v10.1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+:root{--bg:#eef0f3;--panel:#fff;--text:#14181f;--muted:#667085;--border:#cfd4dc;--accent:#2563eb;--canvas:#d9dde3;--btn:#f1f3f6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101215;--panel:#171a1f;--text:#e6e8ec;--muted:#98a2b3;--border:#2c313a;--accent:#5b9bff;--canvas:#2b2f36;--btn:#22262d}}
+:root[data-theme="dark"]{--bg:#101215;--panel:#171a1f;--text:#e6e8ec;--muted:#98a2b3;--border:#2c313a;--accent:#5b9bff;--canvas:#2b2f36;--btn:#22262d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--text);font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column;overflow:hidden}
+header{display:flex;justify-content:space-between;align-items:baseline;padding:8px 12px;background:var(--panel);border-bottom:1px solid var(--border)}
+header b{font-size:16px}header small{color:var(--muted);margin-left:6px}
+#view{flex:1;min-height:0;position:relative}
+canvas{width:100%;height:100%;display:block;touch-action:none}
+#hud{position:absolute;left:10px;top:8px;font-weight:700;pointer-events:none}
+#panel{background:var(--panel);border-top:1px solid var(--border);max-height:46%;overflow-y:auto}
+.row{display:flex;gap:6px;align-items:center;overflow-x:auto;padding:6px 8px}
+button{flex:0 0 auto;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--btn);color:var(--text);font:inherit}
+button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+#modes{border-bottom:1px solid var(--border)}#modes button{flex:1;font-weight:600}
+.sl{display:flex;align-items:center;gap:8px;padding:3px 12px}.sl input{flex:1}.sl output{width:46px;text-align:right;color:var(--muted)}
+.hint{margin:6px 12px;color:var(--muted);font-size:12px}
+input[type=color]{flex:0 0 auto;width:40px;height:36px;padding:0;border:1px solid var(--border);border-radius:8px;background:none}
+#inst{padding:5px 10px;font-size:13px}
+#help{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);padding:20px;z-index:9}
+#help[hidden]{display:none}
+#help div{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px;max-width:340px;line-height:1.5}
+#help p{margin:8px 0}
+#files{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);padding:20px;z-index:9}
+#files[hidden]{display:none}
+#files>div{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px;width:min(360px,100%);max-height:80%;overflow:auto}
+#fn{width:100%;box-sizing:border-box;padding:8px;margin:8px 0;border-radius:8px;border:1px solid var(--border);background:var(--btn);color:var(--text);font:inherit}
+.fb{flex:0 0 auto;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--btn)}
+input[type=text]{flex:1;min-width:0;padding:8px;border-radius:8px;border:1px solid var(--border);background:var(--btn);color:var(--text);font:inherit}
+header{flex-wrap:wrap;gap:4px}
+
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#04070d;--panel:rgba(8,16,30,.82);--text:#d6f3ff;--muted:#6f96ab;--border:rgba(0,229,255,.3);--accent:#00e5ff;--canvas:#0a1322;--btn:rgba(0,229,255,.08)}
+body{font:600 15px Rajdhani,"Segoe UI",system-ui,sans-serif;letter-spacing:.02em;background:radial-gradient(120% 90% at 15% 0%,#0c2038 0%,#04070d 60%)}
+header{background:rgba(6,12,24,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);box-shadow:0 2px 20px rgba(0,229,255,.15);align-items:center}
+header b{font:600 17px Orbitron,Rajdhani,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-shadow:0 0 10px rgba(0,229,255,.6)}
+header small{color:var(--muted);letter-spacing:.08em}
+#panel{background:var(--panel);backdrop-filter:blur(12px);border-top:1px solid var(--border)}
+button,.fb{border:0;color:var(--text);font:inherit;background:var(--btn);box-shadow:inset 0 0 0 1px var(--border);clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+button:active{background:rgba(0,229,255,.25)}
+button.on{background:linear-gradient(135deg,#00e5ff,#7c5cff);color:#001018;box-shadow:0 0 14px rgba(0,229,255,.55)}
+#modes button{text-transform:uppercase;letter-spacing:.12em}
+.row b{color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:.14em;flex:0 0 auto}
+input[type=range]{accent-color:var(--accent)}.sl output{color:var(--accent)}
+#hud{font-family:Orbitron,sans-serif;text-shadow:0 0 8px currentColor}
+#view::after{content:"";position:absolute;inset:6px;pointer-events:none;background:linear-gradient(var(--accent),var(--accent)) 0 0/18px 2px,linear-gradient(var(--accent),var(--accent)) 0 0/2px 18px,linear-gradient(var(--accent),var(--accent)) 100% 0/18px 2px,linear-gradient(var(--accent),var(--accent)) 100% 0/2px 18px,linear-gradient(var(--accent),var(--accent)) 0 100%/18px 2px,linear-gradient(var(--accent),var(--accent)) 0 100%/2px 18px,linear-gradient(var(--accent),var(--accent)) 100% 100%/18px 2px,linear-gradient(var(--accent),var(--accent)) 100% 100%/2px 18px;background-repeat:no-repeat;opacity:.7}
+#rot{display:none;position:absolute;left:50%;bottom:10px;transform:translateX(-50%);padding:6px 12px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--border);color:var(--accent);font-size:12px;pointer-events:none;white-space:nowrap}
+@media (orientation:portrait){#rot{display:block}}
+@media (orientation:landscape){body{display:grid;grid-template-columns:minmax(0,1fr) 360px;grid-template-rows:auto minmax(0,1fr)}header{grid-column:1/3;padding:4px 12px}#view{grid-column:1;grid-row:2;min-height:0}#panel{grid-column:2;grid-row:2;max-height:none;min-height:0;border-top:0;border-left:1px solid var(--border)}.row{flex-wrap:wrap;overflow:visible}}
+
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fffdf3;--panel:rgba(255,255,255,.92);--text:#1b1b1b;--muted:#6b6a5a;--border:rgba(240,180,0,.6);--accent:#ffc400;--canvas:#eceef0;--btn:#ffffff}
+body{background:radial-gradient(120% 90% at 15% 0%,#fff6c9 0%,#ffffff 55%)}
+header{background:rgba(255,255,255,.94);border-bottom:2px solid var(--accent);box-shadow:0 2px 14px rgba(255,196,0,.35)}
+header b{color:#1b1b1b;text-shadow:none;border-bottom:3px solid var(--accent)}
+header small{color:var(--muted)}
+button:active{background:#ffe680}
+button.on{background:linear-gradient(135deg,#ffd60a,#fff4b8);color:#1b1b1b;box-shadow:0 0 14px rgba(255,196,0,.65),inset 0 0 0 1px #e0a800}
+.row b,.sl output,#rot{color:#a07800}
+#hud{text-shadow:none}
+@media (orientation:landscape){body{grid-template-columns:minmax(0,1fr) clamp(250px,30vw,320px)}header{padding:2px 10px}header b{font-size:13px}header small{font-size:11px}button,.fb{padding:6px 9px;font-size:14px}.row{gap:4px;padding:4px 6px}.sl{padding:1px 8px}#view::after{inset:4px}}
+body.pc{grid-template-columns:minmax(0,1fr)!important}
+body.pc #panel{display:none}
+
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#000;--panel:rgba(12,12,14,.93);--text:#fff;--muted:#bdb8a0;--border:rgba(255,214,10,.55);--accent:#ffd60a;--canvas:#08080a;--btn:#17171b}
+body{background:radial-gradient(120% 90% at 15% 0%,#2b2400 0%,#000 55%)}
+header{background:rgba(8,8,10,.95);border-bottom:2px solid var(--accent);box-shadow:0 2px 18px rgba(255,214,10,.3)}
+header b{color:#fff;text-shadow:0 0 10px rgba(255,214,10,.5);border-bottom:3px solid var(--accent)}
+button:active{background:#4a3f00}
+button.on{background:linear-gradient(135deg,#ffd60a,#fff7c2);color:#111;box-shadow:0 0 16px rgba(255,214,10,.6),inset 0 0 0 1px #fff}
+.row b,.sl output,#rot{color:#ffd60a}
+#lg{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.65);padding:20px;z-index:9}#lg[hidden]{display:none}#lg div{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px;min-width:220px;display:flex;flex-direction:column;gap:8px}
+input[type=password],textarea{flex:1;min-width:0;padding:8px;border-radius:8px;border:1px solid var(--border);background:var(--btn);color:var(--text);font:inherit}textarea{resize:vertical}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+<script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))</script>
+</head>
+<body>
+<header><div><b>atmo 3D-v10.1</b><small>par Ngoga Enock</small></div><div><button id="lgb" title="Langue">🌐</button> <button id="pt" title="Afficher ou masquer le panneau">☰</button> <button data-a="undo" title="Annuler">↶</button> <button data-a="redo" title="Rétablir">↷</button> <button id="fb">Fichiers</button> <button id="inst">Installer</button></div></header>
+<div id="view"><canvas id="c"></canvas><svg id="zv" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></svg><div id="rot">↻ Tourne ton téléphone en mode paysage</div><div id="hud"><span style="color:#ef4444">X</span> <span style="color:#22c55e">Y</span> <span style="color:#3b82f6">Z</span></div></div>
+<div id="panel">
+<div class="row" id="modes"><button data-m="obj" class="on">Objet</button><button data-m="edit">Édition</button><button data-m="sculpt">Sculpt</button><button data-m="file">Fichier</button><button data-m="ia">IA</button></div>
+<div class="row" id="viewrow"><button data-v="persp">Persp.</button><button data-v="front">Devant</button><button data-v="right">Droite</button><button data-v="top">Dessus</button><button data-a="frame">Cadrer</button><button data-d="wire">Filaire</button><button data-d="axes" class="on">Axes</button><button data-d="grid" class="on">Grille</button><button data-a="undo">Annuler</button></div>
+<div id="ctx"></div>
+</div>
+<div id="files" hidden><div><b>Fichiers</b><input id="fn" value="Mon modèle" aria-label="Nom du projet"><div class="row" style="padding:0 0 6px"><button id="fs">Enregistrer</button><button id="fo">Exporter OBJ</button><button id="fi">Importer OBJ</button><input type="file" id="ff" accept=".obj,text/plain" hidden></div><div id="fl"></div><p class="hint" id="fm"></p><button id="fc">Fermer</button></div></div>
+<div id="lg" hidden><div><b>🌐 Langue</b><button data-l="fr">Français</button><button data-l="en">English</button><button data-l="es">Español</button><button data-l="ar">العربية</button><button data-l="zh">中文</button><button>Fermer</button></div></div>
+<div id="help" hidden><div><b>Installer l’application</b><p>iPhone (Safari) : touche Partager, puis « Sur l’écran d’accueil ».</p><p>Android (Chrome) : touche le menu ⋮, puis « Installer l’application » ou « Ajouter à l’écran d’accueil ».</p><button>Fermer</button></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),cv=$('#c'),view=$('#view');
+const R=new THREE.WebGLRenderer({canvas:cv,antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(50,1,.05,200);cam.up.set(0,0,1);
+scene.add(new THREE.HemisphereLight(0xffffff,0x444455,.5));
+const dl=new THREE.DirectionalLight(0xffffff,.8);dl.position.set(4,-5,8);scene.add(dl);
+const grid=new THREE.GridHelper(20,20,0xffd60a,0x2e2e2a);grid.rotation.x=Math.PI/2;scene.add(grid);
+const axes=new THREE.AxesHelper(4);scene.add(axes);
+(function(){const c=document.createElement('canvas');c.width=1024;c.height=512;const g=c.getContext('2d');g.scale(2,2);const gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#cfe3ff');gr.addColorStop(.5,'#ffffff');gr.addColorStop(.52,'#6b7280');gr.addColorStop(1,'#2b2f36');g.fillStyle=gr;g.fillRect(0,0,512,256);g.fillStyle='#fff';[[50,28,80,46],[170,48,46,74],[290,32,120,30],[430,52,52,62]].forEach(r=>g.fillRect(r[0],r[1],r[2],r[3]));g.fillStyle='#1b1f26';[[90,28,3,46],[190,48,3,74],[350,32,3,30],[455,52,3,62]].forEach(r=>g.fillRect(r[0],r[1],r[2],r[3]));const t=new THREE.CanvasTexture(c);t.mapping=THREE.EquirectangularReflectionMapping;scene.environment=new THREE.PMREMGenerator(R).fromEquirectangular(t).texture})();
+function theme(){scene.background=new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--canvas').trim())}
+theme();matchMedia('(prefers-color-scheme: dark)').addEventListener('change',theme);
+let az=-.8,el=.5,dist=7,tgt=new THREE.Vector3(0,0,.8);
+const objs=[],hist=[],SEL={v:new Set(),e:new Set(),f:new Set()};
+let sel=null,mode='obj',sm='f',tf='pos',wire=false,orb=false,ov=null,hull=null,stp=.1,th=.1,prop=0,msg='',cur='';
+const br={t:'draw',r:.5,s:.5},K=['x','y','z'],TF={pos:{min:-6,max:6,st:.05},rot:{min:-180,max:180,st:1},scl:{min:.1,max:4,st:.05}};
+function upd(){const c=Math.cos(el);cam.position.set(tgt.x+dist*c*Math.cos(az),tgt.y+dist*c*Math.sin(az),tgt.z+dist*Math.sin(el));cam.lookAt(tgt)}
+function rs(){const w=view.clientWidth,h=view.clientHeight;if(!w||!h)return;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+new ResizeObserver(rs).observe(view);
+// contour de sélection (coque inversée)
+function sn(g){const p=g.attributes.position,b=g.attributes.normal.array,a=p.array,M=new Map(),k=i=>Math.round(a[i*3]*1e3)+','+Math.round(a[i*3+1]*1e3)+','+Math.round(a[i*3+2]*1e3);
+for(let i=0;i<p.count;i++){const q=k(i);let s=M.get(q);if(!s){s=[0,0,0];M.set(q,s)}s[0]+=b[i*3];s[1]+=b[i*3+1];s[2]+=b[i*3+2]}
+let o=g.attributes.sn;if(!o){o=new THREE.BufferAttribute(new Float32Array(p.count*3),3);g.setAttribute('sn',o)}
+for(let i=0;i<p.count;i++){const s=M.get(k(i));o.setXYZ(i,s[0],s[1],s[2])}o.needsUpdate=true}
+const hm=new THREE.MeshBasicMaterial({color:0xff8a00,side:THREE.BackSide});hm.userData.u={value:.02};
+hm.onBeforeCompile=s=>{s.uniforms.uT=hm.userData.u;s.vertexShader='attribute vec3 sn;\nuniform float uT;\n'+s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\ntransformed+=normalize(sn)*uT;')};
+// maillage éditable : sommets v, faces f (polygones)
+const ek=(a,b)=>a<b?a+'_'+b:b+'_'+a;
+function edges(e){const E=new Map();e.f.forEach(f=>f.forEach((a,i)=>{const b=f[(i+1)%f.length];E.set(ek(a,b),[a,b])}));return E}
+function subdiv(e){const V=e.v,F=[],mid=new Map(),mp=(a,b)=>{const k=ek(a,b);let i=mid.get(k);if(i===undefined){i=V.length;V.push(V[a].map((x,j)=>(x+V[b][j])/2));mid.set(k,i)}return i};
+const FC=[];e.f.forEach((f,fi)=>{const n=f.length,c=V.length;V.push([0,1,2].map(j=>f.reduce((s,i)=>s+V[i][j],0)/n));const m=f.map((a,i)=>mp(a,f[(i+1)%n]));for(let i=0;i<n;i++){F.push([f[i],m[i],c,m[(i+n-1)%n]]);FC.push(e.fc?e.fc[fi]:0)}});if(e.fc)e.fc=FC;e.f=F}
+function clean(e){const u=new Set();e.f.forEach(f=>f.forEach(i=>u.add(i)));const mp=new Map(),V=[];e.v.forEach((p,i)=>{if(u.has(i)){mp.set(i,V.length);V.push(p)}});e.v=V;e.f=e.f.map(f=>f.map(i=>mp.get(i)))}
+const G={cube:()=>({v:[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]].map(p=>p.map(x=>x*.7)),f:[[0,3,2,1],[4,5,6,7],[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7]]}),
+plane:()=>{const n=5,v=[],f=[];for(let i=0;i<n;i++)for(let j=0;j<n;j++)v.push([i/(n-1)*2-1,j/(n-1)*2-1,0]);for(let i=0;i<n-1;i++)for(let j=0;j<n-1;j++)f.push([i*n+j,(i+1)*n+j,(i+1)*n+j+1,i*n+j+1]);return{v,f}},
+sphere:()=>{const e=G.cube();subdiv(e);subdiv(e);subdiv(e);e.v=e.v.map(p=>{const l=Math.hypot(...p)||1;return p.map(x=>x/l*.9)});return e},
+cyl:()=>{const n=16,v=[],f=[],ix=[...Array(n).keys()];for(const z of[-.8,.8])for(let i=0;i<n;i++){const a=i/n*6.2832;v.push([Math.cos(a)*.7,Math.sin(a)*.7,z])}for(let i=0;i<n;i++)f.push([i,(i+1)%n,n+(i+1)%n,n+i]);f.push(ix.slice().reverse(),ix.map(i=>n+i));return{v,f}},
+torus:()=>{const nu=16,nv=8,v=[],f=[];for(let i=0;i<nu;i++)for(let j=0;j<nv;j++){const u=i/nu*6.2832,t=j/nv*6.2832,r=.8+.3*Math.cos(t);v.push([r*Math.cos(u),r*Math.sin(u),.3*Math.sin(t)])}for(let i=0;i<nu;i++)for(let j=0;j<nv;j++){const i2=(i+1)%nu,j2=(j+1)%nv;f.push([i*nv+j,i2*nv+j,i2*nv+j2,i*nv+j2])}return{v,f}}};
+function build(m){const e=m.userData.em,P=[],t2f=[];const U=[],C=[];e.f.forEach((f,fi)=>{const a=e.v[f[0]],b=e.v[f[1]],c=e.v[f[2]],n=[(b[1]-a[1])*(c[2]-a[2])-(b[2]-a[2])*(c[1]-a[1]),(b[2]-a[2])*(c[0]-a[0])-(b[0]-a[0])*(c[2]-a[2]),(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0])].map(Math.abs),ax=n[0]>=n[1]&&n[0]>=n[2]?[1,2]:n[1]>=n[2]?[0,2]:[0,1];const cl=e.fc?hc(e.fc[fi]):[1,1,1];for(let i=1;i<f.length-1;i++){for(const k of[f[0],f[i],f[i+1]]){P.push(...e.v[k]);C.push(...cl);U.push(e.v[k][ax[0]],e.v[k][ax[1]])}t2f.push(fi)}});
+const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(new Float32Array(P),3));g.setAttribute('uv',new THREE.BufferAttribute(new Float32Array(U),2));g.setAttribute('color',new THREE.BufferAttribute(new Float32Array(C),3));m.userData.t2f=t2f;
+const old=m.geometry;m.geometry=g;old.dispose();
+if(P.length){g.computeVertexNormals();sn(g);g.computeBoundingSphere();g.computeBoundingBox()}
+if(hull&&hull.parent===m)hull.geometry=g}
+function add(k,em){push();const m=new THREE.Mesh(new THREE.BufferGeometry(),new THREE.MeshStandardMaterial({color:0xc8ccd4,vertexColors:true,roughness:.6,metalness:.05,wireframe:wire,side:THREE.DoubleSide}));m.userData.k=k;m.userData.em=em||G[k]();build(m);m.position.set(0,0,1);scene.add(m);objs.push(m);pick(m)}
+function reset(){SEL.v=new Set();SEL.e=new Set();SEL.f=new Set()}
+function pick(o){if(sel)sel.material.emissive.setHex(0);if(hull){hull.parent.remove(hull);hull=null}sel=o;if(o){o.material.emissive.setHex(0x1a1a1a);hull=new THREE.Mesh(o.geometry,hm);hull.frustumCulled=false;hull.visible=mode==='obj';o.add(hull)}reset();ovl();ui()}
+function dup(){if(!sel)return;const o=sel;add(o.userData.k,JSON.parse(JSON.stringify(o.userData.em)));sel.position.copy(o.position);sel.position.x+=1.2;sel.rotation.copy(o.rotation);sel.scale.copy(o.scale);sel.material.color.setHex(o.material.userData.glass?o.userData.mt.c:o.material.color.getHex());if(o.userData.mt){sel.userData.mt=JSON.parse(JSON.stringify(o.userData.mt));mkMat(sel)}ui()}
+function del(){if(!sel)return;push();const o=sel;pick(null);scene.remove(o);objs.splice(objs.indexOf(o),1)}
+function setMode(m){mode=m;reset();if(hull)hull.visible=m==='obj';ovl();document.querySelectorAll('#modes button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));ui()}
+let loading=false;const redo=[];
+function push(){if(loading)return;hist.push(ser());if(hist.length>30)hist.shift();redo.length=0}
+function restore(t){const i=objs.indexOf(sel);loading=true;try{load(t)}catch(x){}loading=false;pick(objs[Math.min(i,objs.length-1)]||null)}
+function rdo(){if(!redo.length)return;hist.push(ser());restore(redo.pop())}
+function undo(){if(!hist.length)return;redo.push(ser());restore(hist.pop())}
+// sélection (sommets, arêtes, faces)
+function vsel(){const e=sel.userData.em,o=new Set();if(sm==='v')SEL.v.forEach(i=>o.add(i));else if(sm==='e')SEL.e.forEach(k=>k.split('_').forEach(i=>o.add(+i)));else SEL.f.forEach(i=>e.f[i].forEach(v=>o.add(v)));return o}
+function setSM(n){if(sel){const e=sel.userData.em,vs=vsel();reset();SEL.v=new Set(vs);if(n==='e')for(const[k,[a,b]]of edges(e))if(vs.has(a)&&vs.has(b))SEL.e.add(k);if(n==='f')e.f.forEach((f,i)=>{if(f.every(v=>vs.has(v)))SEL.f.add(i)})}sm=n;ovl();ui()}
+function selAll(on){reset();if(on&&sel){const e=sel.userData.em;if(sm==='v')e.v.forEach((p,i)=>SEL.v.add(i));else if(sm==='e')edges(e).forEach((x,k)=>SEL.e.add(k));else e.f.forEach((f,i)=>SEL.f.add(i))}ovl()}
+function proj(p){const v=new THREE.Vector3(p[0],p[1],p[2]).applyMatrix4(sel.matrixWorld).project(cam),r=view.getBoundingClientRect();return[(v.x+1)/2*r.width+r.left,(1-v.y)/2*r.height+r.top]}
+const tog=(s,k)=>s.has(k)?s.delete(k):s.add(k);
+function pickEdit(x,y){const e=sel.userData.em;sel.updateMatrixWorld();
+if(sm==='v'){let b=-1,bd=2500;e.v.forEach((p,i)=>{const[a,c]=proj(p),d=(a-x)**2+(c-y)**2;if(d<bd){bd=d;b=i}});if(b>=0)tog(SEL.v,b)}
+else if(sm==='e'){let b=null,bd=3600;for(const[k,[a,c]]of edges(e)){const A=proj(e.v[a]),B=proj(e.v[c]),d=((A[0]+B[0])/2-x)**2+((A[1]+B[1])/2-y)**2;if(d<bd){bd=d;b=k}}if(b)tog(SEL.e,b)}
+else{const h=hit(x,y,[sel]);if(h)tog(SEL.f,sel.userData.t2f[h.faceIndex])}
+ovl();ui()}
+function ovl(){if(ov){ov.parent.remove(ov);ov=null}if(mode!=='edit'||!sel)return;
+const e=sel.userData.em,vs=vsel(),g=new THREE.Group(),lp=[],lc=[],pp=[],pc=[],fp=[],O=[1,.54,0],A=[.92,.92,.92],B=[.42,.42,.38];
+for(const[k,[a,b]]of edges(e)){const on=sm==='e'?SEL.e.has(k):(vs.has(a)&&vs.has(b)),c=on?O:B;lp.push(...e.v[a],...e.v[b]);lc.push(...c,...c)}
+e.v.forEach((p,i)=>{pp.push(...p);pc.push(...(vs.has(i)?O:A))});
+if(sm==='f')SEL.f.forEach(i=>{const f=e.f[i];for(let k=1;k<f.length-1;k++)fp.push(...e.v[f[0]],...e.v[f[k]],...e.v[f[k+1]])});
+const bg=(p,c)=>{const q=new THREE.BufferGeometry();q.setAttribute('position',new THREE.Float32BufferAttribute(p,3));if(c)q.setAttribute('color',new THREE.Float32BufferAttribute(c,3));return q};
+g.add(new THREE.LineSegments(bg(lp,lc),new THREE.LineBasicMaterial({vertexColors:true,depthTest:false})));
+g.add(new THREE.Points(bg(pp,pc),new THREE.PointsMaterial({size:7,sizeAttenuation:false,vertexColors:true,depthTest:false})));
+if(fp.length)g.add(new THREE.Mesh(bg(fp),new THREE.MeshBasicMaterial({color:0xff8a00,transparent:true,opacity:.4,side:THREE.DoubleSide,depthTest:false})));
+g.children.forEach(c=>{c.renderOrder=2;c.frustumCulled=false});sel.add(g);ov=g}
+// outils d'édition
+const up=()=>{build(sel);ovl();ui()};
+function nrm(vs){const e=sel.userData.em;let n=[0,0,0];e.f.forEach((f,i)=>{if(sm==='f'?!SEL.f.has(i):!f.some(v=>vs.has(v)))return;for(let k=0;k<f.length;k++){const a=e.v[f[k]],b=e.v[f[(k+1)%f.length]];n[0]+=(a[1]-b[1])*(a[2]+b[2]);n[1]+=(a[2]-b[2])*(a[0]+b[0]);n[2]+=(a[0]-b[0])*(a[1]+b[1])}});const l=Math.hypot(...n)||1;return n.map(x=>x/l)}
+function mv2(ax,s,np){if(!sel)return;const vs=vsel();if(!vs.size)return;if(!np)push();const e=sel.userData.em;let d=[0,0,0];if(ax==='n')d=nrm(vs).map(x=>x*s);else d[ax]=s;wts(vs).forEach((w,i)=>{for(let j=0;j<3;j++)e.v[i][j]+=d[j]*w});up()}
+function sc(f){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em,c=[0,1,2].map(j=>[...vs].reduce((s,i)=>s+e.v[i][j],0)/vs.size);wts(vs).forEach((w,i)=>{for(let j=0;j<3;j++){const t=c[j]+(e.v[i][j]-c[j])*f;e.v[i][j]+=(t-e.v[i][j])*w}});up()}
+function extrude(){if(sm!=='f'||!SEL.f.size)return;push();const e=sel.userData.em,F=[...SEL.f],cnt=new Map(),nm=new Map(),nv=a=>{if(!nm.has(a)){nm.set(a,e.v.length);e.v.push(e.v[a].slice())}return nm.get(a)},side=[],sp=[];
+F.forEach(i=>{const f=e.f[i];f.forEach((a,k)=>{const q=ek(a,f[(k+1)%f.length]);cnt.set(q,(cnt.get(q)||0)+1)})});
+F.forEach(i=>{const f=e.f[i];f.forEach((a,k)=>{const b=f[(k+1)%f.length];if(cnt.get(ek(a,b))===1){side.push([a,b,nv(b),nv(a)]);sp.push(i)}})});
+F.forEach(i=>{e.f[i]=e.f[i].map(nv)});if(e.fc)e.fc.push(...sp.map(i=>e.fc[i]));e.f.push(...side);clean(e);
+SEL.f=new Set(F);mv2('n',.3,1)}
+function inset(){if(sm!=='f'||!SEL.f.size)return;push();const e=sel.userData.em,ad=[];[...SEL.f].forEach(i=>{const f=e.f[i],n=f.length,c=[0,1,2].map(j=>f.reduce((s,v)=>s+e.v[v][j],0)/n),nw=f.map(v=>{e.v.push(e.v[v].map((x,j)=>c[j]+(x-c[j])*.7));return e.v.length-1});for(let k=0;k<n;k++){ad.push([f[k],f[(k+1)%n],nw[(k+1)%n],nw[k]]);if(e.fc)e.fc.push(e.fc[i])}e.f[i]=nw});e.f.push(...ad);up()}
+function delSel(){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em;const kp=e.f.map((f,i)=>!(sm==='f'?SEL.f.has(i):f.some(v=>vs.has(v))));e.f=e.f.filter((f,i)=>kp[i]);if(e.fc)e.fc=e.fc.filter((c,i)=>kp[i]);clean(e);reset();up()}
+function subAll(){if(!sel||sel.userData.em.f.length>3000)return;push();subdiv(sel.userData.em);reset();up()}
+function merge(){if(!sel)return;const vs=vsel();if(vs.size<2)return;push();const e=sel.userData.em,a=[...vs],t=Math.min(...a);e.v[t]=[0,1,2].map(j=>a.reduce((s,i)=>s+e.v[i][j],0)/a.length);const nf2=e.f.map(f=>f.map(i=>vs.has(i)?t:i).filter((v,k,r)=>v!==r[(k+1)%r.length])),kp=nf2.map(f=>f.length>2);if(e.fc)e.fc=e.fc.filter((c,i)=>kp[i]);e.f=nf2.filter((f,i)=>kp[i]);clean(e);reset();up()}
+// sculpture
+const rc=new THREE.Raycaster(),mv=new THREE.Vector2();
+function hit(x,y,list){const r=view.getBoundingClientRect();mv.set((x-r.left)/r.width*2-1,-((y-r.top)/r.height*2-1));rc.setFromCamera(mv,cam);return rc.intersectObjects(list,false)[0]}
+function sculpt(h){const m=h.object,e=m.userData.em,c=m.worldToLocal(h.point.clone()),n=h.face.normal,rr=br.r/m.scale.x,idx=[],f=[];let mean=0,W=0;
+e.v.forEach((p,i)=>{const d=Math.hypot(p[0]-c.x,p[1]-c.y,p[2]-c.z);if(d<rr){const t=1-d/rr,w=t*t*(3-2*t);idx.push(i);f.push(w);mean+=(p[0]*n.x+p[1]*n.y+p[2]*n.z)*w;W+=w}});
+if(!W)return;mean/=W;
+idx.forEach((i,j)=>{const p=e.v[i],o=p[0]*n.x+p[1]*n.y+p[2]*n.z,d=br.t==='smooth'?(mean-o)*f[j]*br.s*.5:(br.t==='draw'?1:-1)*br.s*.04*Math.max(rr,.2)*f[j];p[0]+=n.x*d;p[1]+=n.y*d;p[2]+=n.z*d});build(m)}
+function getv(i){const k=K[i];return tf==='pos'?sel.position[k]:tf==='rot'?THREE.MathUtils.radToDeg(sel.rotation[k]):sel.scale[k]}
+function setv(i,v){const k=K[i];if(tf==='pos')sel.position[k]=v;else if(tf==='rot')sel.rotation[k]=THREE.MathUtils.degToRad(v);else sel.scale[k]=v}
+// matériaux, textures, verre
+const MT=()=>sel.userData.mt||(sel.userData.mt={t:'std',op:.35,tex:null,ts:1});
+function mkMat(o){const m=o.userData.mt||{t:'std',op:.35},old=o.material,n=m.t==='glass'?new THREE.MeshPhysicalMaterial({color:old.color,roughness:.02,metalness:0,clearcoat:1,clearcoatRoughness:0,transparent:true,opacity:m.op,envMapIntensity:1.6,side:THREE.DoubleSide,depthWrite:false}):new THREE.MeshStandardMaterial({color:old.color,roughness:m.t==='metal'?.25:.6,metalness:m.t==='metal'?.9:.05,side:THREE.DoubleSide});
+n.wireframe=wire;n.emissive.copy(old.emissive);o.material=n;old.dispose();applyTex(o)}
+function preset(n){const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');
+if(n==='damier'){for(let i=0;i<8;i++)for(let j=0;j<8;j++){g.fillStyle=(i+j)%2?'#222':'#eee';g.fillRect(i*32,j*32,32,32)}}
+else if(n==='briques'){g.fillStyle='#d8d0c4';g.fillRect(0,0,256,256);for(let r=0;r<8;r++)for(let k=-1;k<4;k++){g.fillStyle='hsl('+(12+(r*7+k*13+13)%10)+',55%,'+(38+(r*5+k*3+3)%8)+'%)';g.fillRect(k*64+(r%2?32:0)+2,r*32+2,60,28)}}
+else{for(let y=0;y<256;y++){const v=Math.sin(y*.15+Math.sin(y*.04)*3)*.5+.5;g.fillStyle='rgb('+(120+v*60|0)+','+(75+v*40|0)+','+(40+v*25|0)+')';g.fillRect(0,y,256,1)}}
+return c}
+function texFrom(s,cb){if(s.startsWith('p:'))return cb(preset(s.slice(2)));const i=new Image();i.onload=()=>cb(i);i.src=s}
+function applyTex(o){const m=o.userData.mt;o.material.map=null;o.material.needsUpdate=true;if(!m||!m.tex)return;texFrom(m.tex,s=>{const t=new THREE.Texture(s);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(m.ts,m.ts);t.needsUpdate=true;o.material.map=t;o.material.needsUpdate=true})}
+function impTex(file){const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const k=Math.min(1,1024/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*k|0;c.height=i.height*k|0;c.getContext('2d').drawImage(i,0,0,c.width,c.height);push();MT().tex=c.toDataURL('image/jpeg',.85);sel.material.color.set(0xffffff);applyTex(sel);ui()};i.src=r.result};r.readAsDataURL(file)}
+function matUI(){const m=sel.userData.mt||{t:'std',op:.35,tex:null,ts:1};
+return '<div class="row"><b>Matériau</b>'+BT([['std','Mat'],['metal','Métal'],['glass','Verre']],'data-mt',x=>m.t==x?'on':'')+'</div>'+(m.t==='glass'?SL('Transparence','op',.05,.9,.05,m.op):'')+'<div class="row"><b>Texture</b>'+BT([['damier','Damier'],['briques','Briques'],['bois','Bois'],['none','Retirer']],'data-tx')+'<label class="fb">Importer<input type="file" id="tx" accept="image/*" hidden></label></div>'+(m.tex?SL('Échelle texture','ts',.2,4,.1,m.ts):'')}
+// subdivision lisse et solidification
+const vadd=(a,b)=>a.map((x,j)=>x+b[j]),vmul=(a,s)=>a.map(x=>x*s);
+function vnorm(e){const n=e.v.map(()=>[0,0,0]);e.f.forEach(f=>{const a=[0,0,0];for(let k=0;k<f.length;k++){const p=e.v[f[k]],q=e.v[f[(k+1)%f.length]];a[0]+=(p[1]-q[1])*(p[2]+q[2]);a[1]+=(p[2]-q[2])*(p[0]+q[0]);a[2]+=(p[0]-q[0])*(p[1]+q[1])}f.forEach(i=>{n[i][0]+=a[0];n[i][1]+=a[1];n[i][2]+=a[2]})});return n.map(a=>{const l=Math.hypot(...a)||1;return a.map(x=>x/l)})}
+function solid(){if(!sel)return;const e=sel.userData.em;if(!e.f.length)return;push();const N=vnorm(e),n=e.v.length,cnt=new Map();
+e.f.forEach(f=>f.forEach((a,k)=>{const q=ek(a,f[(k+1)%f.length]);cnt.set(q,(cnt.get(q)||0)+1)}));
+e.v.forEach((p,i)=>e.v.push(p.map((x,j)=>x-N[i][j]*th)));
+const nf=[],sd=[],sp=[];e.f.forEach((f,fi)=>{nf.push(f.map(i=>i+n).reverse());f.forEach((a,k)=>{const b=f[(k+1)%f.length];if(cnt.get(ek(a,b))===1){sd.push([a,a+n,b+n,b]);sp.push(fi)}})});
+if(e.fc){const o=e.fc.slice();e.fc.push(...o,...sp.map(i=>o[i]))}e.f.push(...nf,...sd);reset();up()}
+function cc(){if(!sel)return;const e=sel.userData.em;if(!e.f.length||e.f.length>3000)return;push();const V=e.v,nv=V.length,F=e.f,Z=[0,0,0];
+const fp=F.map(f=>vmul(f.reduce((s,i)=>vadd(s,V[i]),Z),1/f.length)),ed=new Map(),vf=V.map(()=>[]),ve=V.map(()=>[]);
+F.forEach((f,i)=>f.forEach((a,k)=>{const b=f[(k+1)%f.length],q=ek(a,b);let d=ed.get(q);if(!d){d={a,b,f:[]};ed.set(q,d);ve[a].push(d);ve[b].push(d)}d.f.push(i);vf[a].push(i)}));
+let c=nv+F.length;ed.forEach(d=>{d.i=c++;d.m=vmul(vadd(V[d.a],V[d.b]),.5);d.p=d.f.length===2?vmul(vadd(vadd(V[d.a],V[d.b]),vadd(fp[d.f[0]],fp[d.f[1]])),.25):d.m});
+const out=V.map((p,i)=>{const L=ve[i];if(!L.length)return p.slice();const bd=L.filter(d=>d.f.length===1);
+if(bd.length>=2){let s=vmul(p,6);bd.slice(0,2).forEach(d=>{s=vadd(s,V[d.a===i?d.b:d.a])});return vmul(s,1/8)}
+const n=vf[i].length,Fa=vmul(vf[i].reduce((s,j)=>vadd(s,fp[j]),Z),1/n),Ra=vmul(L.reduce((s,d)=>vadd(s,d.m),Z),1/L.length);
+return vmul(vadd(vadd(Fa,vmul(Ra,2)),vmul(p,n-3)),1/n)});
+const NF=[],FC=[];F.forEach((f,fi)=>{const n=f.length;f.forEach((a,k)=>{NF.push([a,ed.get(ek(a,f[(k+1)%n])).i,nv+fi,ed.get(ek(f[(k+n-1)%n],a)).i]);if(e.fc)FC.push(e.fc[fi])})});
+e.v=[...out,...fp,...[...ed.values()].map(d=>d.p)];if(e.fc)e.fc=FC;e.f=NF;reset();up()}
+// verre avec réfraction, couleurs par face
+let fcv='#ff8a00',gid=0;
+const hc=h=>[(h>>16&255)/255,(h>>8&255)/255,(h&255)/255];
+const cval=o=>o.material.userData.glass?('000000'+o.userData.mt.c.toString(16)).slice(-6):o.material.color.getHexString();
+const RT=new THREE.WebGLRenderTarget(2,2),BG={tBg:{value:RT.texture},uRes:{value:new THREE.Vector2(1,1)}};
+function glassPatch(n,m){const u={uIor:{value:m.ior||1.45},uRough:{value:m.rg||0},uTint:{value:new THREE.Color(m.c)}},key='g'+(++gid);n.userData.u=u;n.customProgramCacheKey=()=>key;
+n.onBeforeCompile=sh=>{Object.assign(sh.uniforms,BG,u);sh.fragmentShader='uniform sampler2D tBg;uniform vec2 uRes;uniform float uIor;uniform float uRough;uniform vec3 uTint;\n'+sh.fragmentShader.replace('#include <tonemapping_fragment>',`vec3 gN=normalize(normal);vec3 gV=normalize(vViewPosition);float gF=pow(1.0-clamp(dot(gN,gV),0.0,1.0),3.0);
+vec2 gU=gl_FragCoord.xy/uRes-gN.xy*(uIor-1.0)*0.12;vec3 gB=vec3(0.0);
+for(int i=-1;i<=1;i++){for(int j=-1;j<=1;j++){gB+=texture2D(tBg,gU+vec2(float(i),float(j))*uRough*0.02).rgb;}}
+vec3 gT=pow(max(uTint,vec3(0.02)),vec3(1.0/max(dot(gN,gV),0.25)));
+gB=gB/9.0*gT;
+gl_FragColor.rgb=gB*(1.0-gF*0.95)+gl_FragColor.rgb+vec3(gF*0.12);
+#include <tonemapping_fragment>`)}}
+function mkMat(o){const m=o.userData.mt||(o.userData.mt={t:'std'}),old=o.material,base=old.userData.glass?m.c:old.color.getHex();let n;
+if(m.t==='glass'){m.c=base;n=new THREE.MeshPhysicalMaterial({color:0,roughness:.02+(m.rg||0)*.5,metalness:0,envMapIntensity:1.6,side:THREE.DoubleSide});n.userData.glass=true;glassPatch(n,m)}
+else n=new THREE.MeshStandardMaterial({color:base,vertexColors:true,roughness:m.t==='metal'?.25:.6,metalness:m.t==='metal'?.9:.05,side:THREE.DoubleSide});
+n.wireframe=wire;n.emissive.copy(old.emissive);o.material=n;old.dispose();applyTex(o)}
+function matUI(){const m=sel.userData.mt||{t:'std',ts:1};
+return '<div class="row"><b>Matériau</b>'+BT([['std','Mat'],['metal','Métal'],['glass','Verre']],'data-mt',x=>m.t==x?'on':'')+'</div>'+(m.t==='glass'?SL('Réfraction','ior',1,2,.01,m.ior||1.45)+SL('Dépoli','rg',0,1,.05,m.rg||0)+'<p class="hint">Verre : la couleur choisie plus haut sert de teinte.</p>':'')+'<div class="row"><b>Texture</b>'+BT([['damier','Damier'],['briques','Briques'],['bois','Bois'],['none','Retirer']],'data-tx')+'<label class="fb">Importer<input type="file" id="tx" accept="image/*" hidden></label></div>'+(m.tex?SL('Échelle texture','ts',.2,4,.1,m.ts):'')}
+function paintF(){if(!sel||sm!=='f'||!SEL.f.size)return;push();const e=sel.userData.em,hx=parseInt(fcv.slice(1),16);if(!e.fc){e.fc=e.f.map(()=>sel.material.userData.glass?0xffffff:sel.material.color.getHex());sel.material.color.set(0xffffff)}SEL.f.forEach(i=>{e.fc[i]=hx});up()}
+// outils d'édition avancés
+const ctr=vs=>{const e=sel.userData.em;return[0,1,2].map(j=>[...vs].reduce((s,i)=>s+e.v[i][j],0)/vs.size)};
+function wts(vs){const e=sel.userData.em,w=new Map();vs.forEach(i=>w.set(i,1));if(prop>0){const S=[...vs].map(i=>e.v[i]);e.v.forEach((p,i)=>{if(vs.has(i))return;let d=1e9;for(const q of S){const x=Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);if(x<d)d=x}if(d<prop){const t=1-d/prop;w.set(i,t*t*(3-2*t))}})}return w}
+const fn=(e,f)=>{const a=[0,0,0];for(let k=0;k<f.length;k++){const p=e.v[f[k]],q=e.v[f[(k+1)%f.length]];a[0]+=(p[1]-q[1])*(p[2]+q[2]);a[1]+=(p[2]-q[2])*(p[0]+q[0]);a[2]+=(p[0]-q[0])*(p[1]+q[1])}const l=Math.hypot(...a)||1;return a.map(x=>x/l)};
+function rot(ax,deg){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em,c=ctr(vs),a=deg*Math.PI/180,[p,q]=[[1,2],[2,0],[0,1]][ax];wts(vs).forEach((w,i)=>{const v=e.v[i],x=v[p]-c[p],y=v[q]-c[q],C=Math.cos(a*w),S=Math.sin(a*w);v[p]=c[p]+x*C-y*S;v[q]=c[q]+x*S+y*C});up()}
+function mirror(ax){if(!sel)return;const e=sel.userData.em;if(!e.f.length)return;push();const n=e.v.length;e.v.forEach(p=>{const q=p.slice();q[ax]=-q[ax];e.v.push(q)});const nf=e.f.map(f=>f.map(i=>i+n).reverse());if(e.fc)e.fc.push(...e.fc.slice());e.f.push(...nf);reset();up()}
+function loopCut(){if(!sel||sm!=='e'||!SEL.e.size)return;const e=sel.userData.em,k0=[...SEL.e][0],E=new Map();
+e.f.forEach((f,i)=>f.forEach((a,k)=>{const q=ek(a,f[(k+1)%f.length]);if(!E.has(q))E.set(q,[]);E.get(q).push(i)}));
+const X=new Set([k0]),V2=new Set(),st=[k0];
+while(st.length){const k=st.pop();(E.get(k)||[]).forEach(fi=>{if(V2.has(fi))return;const f=e.f[fi];if(f.length!==4)return;const i=f.findIndex((a,j)=>ek(a,f[(j+1)%4])===k);if(i<0)return;V2.add(fi);const ok=ek(f[(i+2)%4],f[(i+3)%4]);if(!X.has(ok)){X.add(ok);st.push(ok)}})}
+if(!V2.size)return;push();const mid=new Map();X.forEach(k=>{const[a,b]=k.split('_').map(Number);mid.set(k,e.v.length);e.v.push(e.v[a].map((x,j)=>(x+e.v[b][j])/2))});
+const NF=[],FC=[];e.f.forEach((f,fi)=>{const c=e.fc?e.fc[fi]:0;
+if(V2.has(fi)){const j=[0,1,2,3].find(j=>X.has(ek(f[j],f[(j+1)%4]))),a=f[j],b=f[(j+1)%4],cc2=f[(j+2)%4],d=f[(j+3)%4],m1=mid.get(ek(a,b)),m2=mid.get(ek(cc2,d));NF.push([a,m1,m2,d],[m1,b,cc2,m2]);FC.push(c,c)}
+else{const g=[];f.forEach((a,j)=>{g.push(a);const q=ek(a,f[(j+1)%f.length]);if(mid.has(q))g.push(mid.get(q))});NF.push(g);FC.push(c)}});
+e.f=NF;if(e.fc)e.fc=FC;reset();up()}
+function extE(){if(sm!=='e'||!SEL.e.size)return;push();const e=sel.userData.em,N=vnorm(e),nm=new Map(),nv=a=>{if(!nm.has(a)){nm.set(a,e.v.length);e.v.push(e.v[a].map((x,j)=>x+N[a][j]*.2))}return nm.get(a)},F=[],ne=new Set();
+SEL.e.forEach(k=>{const[a,b]=k.split('_').map(Number);F.push([a,b,nv(b),nv(a)]);ne.add(ek(nv(a),nv(b)))});
+if(e.fc)F.forEach(()=>e.fc.push(e.fc[0]));e.f.push(...F);SEL.e=ne;up()}
+function extI(){if(sm!=='f'||!SEL.f.size)return;push();const e=sel.userData.em,sf=[],sp=[];[...SEL.f].forEach(i=>{const f=e.f[i],n=fn(e,f),nw=f.map(v=>{e.v.push(e.v[v].map((x,j)=>x+n[j]*.3));return e.v.length-1});f.forEach((a,k)=>{sf.push([a,f[(k+1)%f.length],nw[(k+1)%f.length],nw[k]]);sp.push(i)});e.f[i]=nw});if(e.fc)e.fc.push(...sp.map(i=>e.fc[i]));e.f.push(...sf);up()}
+function tri(){if(!sel)return;push();const e=sel.userData.em,all=!(sm==='f'&&SEL.f.size),NF=[],FC=[];e.f.forEach((f,i)=>{const c=e.fc?e.fc[i]:0;if((all||SEL.f.has(i))&&f.length>3)for(let k=1;k<f.length-1;k++){NF.push([f[0],f[k],f[k+1]]);FC.push(c)}else{NF.push(f);FC.push(c)}});e.f=NF;if(e.fc)e.fc=FC;reset();up()}
+function flip(){if(!sel)return;push();const e=sel.userData.em,all=!(sm==='f'&&SEL.f.size);e.f=e.f.map((f,i)=>all||SEL.f.has(i)?f.slice().reverse():f);up()}
+function dissolve(){if(!sel)return;const e=sel.userData.em;let ks;
+if(sm==='e')ks=[...SEL.e];else if(sm==='f'){const c=new Map();SEL.f.forEach(i=>e.f[i].forEach((a,k)=>{const q=ek(a,e.f[i][(k+1)%e.f[i].length]);c.set(q,(c.get(q)||0)+1)}));ks=[...c].filter(x=>x[1]===2).map(x=>x[0])}
+else{const vs=vsel();if(!vs.size)return;push();e.f=e.f.map(f=>f.filter(v=>!vs.has(v)));const kp=e.f.map(f=>f.length>2);if(e.fc)e.fc=e.fc.filter((c,i)=>kp[i]);e.f=e.f.filter((f,i)=>kp[i]);clean(e);reset();up();return}
+if(!ks.length)return;push();
+ks.forEach(k=>{const[a,b]=k.split('_').map(Number),ix=[];e.f.forEach((f,i)=>{if(f&&f.some((v,j)=>ek(v,f[(j+1)%f.length])===k))ix.push(i)});if(ix.length!==2)return;const f1=e.f[ix[0]],f2=e.f[ix[1]],r=(f,s)=>{const i=f.indexOf(s);return f.slice(i).concat(f.slice(0,i))},fw=f1[(f1.indexOf(a)+1)%f1.length]===b,s0=fw?a:b,t0=fw?b:a;e.f[ix[0]]=r(f1,t0).concat(r(f2,s0).slice(1,-1));e.f[ix[1]]=null});
+const kp=e.f.map(f=>!!f);if(e.fc)e.fc=e.fc.filter((c,i)=>kp[i]);e.f=e.f.filter(f=>f);clean(e);reset();up()}
+function inv(){if(!sel)return;const e=sel.userData.em,s=new Set();if(sm==='v'){e.v.forEach((p,i)=>{if(!SEL.v.has(i))s.add(i)});SEL.v=s}else if(sm==='e'){edges(e).forEach((x,k)=>{if(!SEL.e.has(k))s.add(k)});SEL.e=s}else{e.f.forEach((f,i)=>{if(!SEL.f.has(i))s.add(i)});SEL.f=s}ovl();ui()}
+function toSph(){if(!sel)return;const vs=vsel();if(vs.size<2)return;push();const e=sel.userData.em,c=ctr(vs),d=i=>Math.hypot(e.v[i][0]-c[0],e.v[i][1]-c[1],e.v[i][2]-c[2]),R2=[...vs].reduce((s,i)=>s+d(i),0)/vs.size;wts(vs).forEach((w,i)=>{const k=1+(R2/(d(i)||1)-1)*.5*w;for(let j=0;j<3;j++)e.v[i][j]=c[j]+(e.v[i][j]-c[j])*k});up()}
+function smoothV(){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em,nb=e.v.map(()=>[]);e.f.forEach(f=>f.forEach((a,k)=>{const b=f[(k+1)%f.length];nb[a].push(b);nb[b].push(a)}));const o=e.v.map(p=>p.slice());wts(vs).forEach((w,i)=>{if(!nb[i].length)return;for(let j=0;j<3;j++){const m=nb[i].reduce((s,x)=>s+o[x][j],0)/nb[i].length;e.v[i][j]=o[i][j]+(m-o[i][j])*.5*w}});up()}
+function rnd(){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em;wts(vs).forEach((w,i)=>{for(let j=0;j<3;j++)e.v[i][j]+=(Math.random()-.5)*th*w});up()}
+function editUI(){const B=(a,c)=>'<div class="row"><b>'+c+'</b>'+BT(a,'data-op')+'</div>';
+return '<div class="row">'+BT([['v','Sommet'],['e','Arête'],['f','Face']],'data-sm',x=>sm==x?'on':'')+'<button data-sa="all">Tout</button><button data-sa="none">Aucun</button><button data-op="iv">Inverser</button></div>'
++B([['ex','Extruder'],['xi','Extr. indiv.'],['xe','Extr. arêtes'],['in','Inset'],['lc','Coupe boucle'],['sub','Subdiviser'],['cc','Subdiv. lisse']],'Créer')
++B([['del','Supprimer'],['ds','Dissoudre'],['mg','Fusionner'],['tr','Triangles'],['fl','Normales'],['sol','Solidifier'],['mxx','Miroir X'],['mxy','Miroir Y'],['mxz','Miroir Z']],'Modifier')
++B([['sp','Vers sphère'],['sv','Lisser'],['rd','Aléatoire']],'Déformer')
++SL('Pas','stp',.01,.5,.01,stp)+SL('Épaisseur','th',.01,.5,.01,th)+SL('Rayon doux','pr',0,2,.05,prop)
++'<div class="row"><b>Bouger</b>'+BT([['0,-1','X−'],['0,1','X+'],['1,-1','Y−'],['1,1','Y+'],['2,-1','Z−'],['2,1','Z+'],['n,-1','N−'],['n,1','N+']],'data-mv')+'</div>'
++'<div class="row"><b>Échelle</b>'+BT([['.9','−'],['1.1','+']],'data-sc')+'<b>Rotation</b>'+BT([['0,-15','X−'],['0,15','X+'],['1,-15','Y−'],['1,15','Y+'],['2,-15','Z−'],['2,15','Z+']],'data-rt')+'</div>'
++'<div class="row"><b>Couleur</b><input type="color" data-k="fcol" value="'+fcv+'"><button data-op="paint">Colorer les faces</button></div>'
++'<p class="hint">Face : sélectionne puis Extruder. Coupe boucle : mode Arête, touche une arête. Rayon doux : agit autour de la sélection.</p>'}
+// coupe boucle (outil), souder, remplir, séparer, dupliquer, aplatir, anneau, étendre
+let lcOn=false,lcN=1;
+function ring(e,k0){const E=new Map();e.f.forEach((f,i)=>f.forEach((a,k)=>{const q=ek(a,f[(k+1)%f.length]);if(!E.has(q))E.set(q,[]);E.get(q).push(i)}));const X=new Set([k0]),V2=new Set(),st=[k0];
+while(st.length){const k=st.pop();(E.get(k)||[]).forEach(fi=>{if(V2.has(fi))return;const f=e.f[fi];if(f.length!==4)return;const i=f.findIndex((a,j)=>ek(a,f[(j+1)%4])===k);if(i<0)return;V2.add(fi);const ok=ek(f[(i+2)%4],f[(i+3)%4]);if(!X.has(ok)){X.add(ok);st.push(ok)}})}
+return{X,V2}}
+function loopCut(k0,n){if(!sel)return;const e=sel.userData.em,{X,V2}=ring(e,k0);if(!V2.size)return;push();n=n||lcN;const mid=new Map();
+X.forEach(k=>{const[a,b]=k.split('_').map(Number),L=[];for(let i=1;i<=n;i++){const t=i/(n+1);L.push(e.v.length);e.v.push(e.v[a].map((x,j)=>x+(e.v[b][j]-x)*t))}mid.set(k,L)});
+const lst=(u,v)=>{const L=mid.get(ek(u,v));return u<v?L:L.slice().reverse()};
+const NF=[],FC=[];e.f.forEach((f,fi)=>{const c=e.fc?e.fc[fi]:0;
+if(V2.has(fi)){const j=[0,1,2,3].find(j=>X.has(ek(f[j],f[(j+1)%4]))),a=f[j],b=f[(j+1)%4],c2=f[(j+2)%4],d=f[(j+3)%4],P=[a,...lst(a,b),b],Q=[d,...lst(c2,d).slice().reverse(),c2];for(let i=0;i<=n;i++){NF.push([P[i],P[i+1],Q[i+1],Q[i]]);FC.push(c)}}
+else{const g=[];f.forEach((a,j)=>{g.push(a);const nx=f[(j+1)%f.length];if(mid.has(ek(a,nx)))g.push(...lst(a,nx))});NF.push(g);FC.push(c)}});
+e.f=NF;if(e.fc)e.fc=FC;reset();up()}
+function lcTap(x,y){const e=sel.userData.em;sel.updateMatrixWorld();let b=null,bd=5000;for(const[k,[a,c]]of edges(e)){const A=proj(e.v[a]),B=proj(e.v[c]),d=((A[0]+B[0])/2-x)**2+((A[1]+B[1])/2-y)**2;if(d<bd){bd=d;b=k}}if(b)loopCut(b,lcN)}
+function weld(){if(!sel)return;push();const e=sel.userData.em,vs=sm==='v'&&SEL.v.size?SEL.v:null,M=new Map(),mp=new Map();e.v.forEach((p,i)=>{if(vs&&!vs.has(i))return;const k=p.map(x=>Math.round(x/.002)).join(',');if(M.has(k))mp.set(i,M.get(k));else M.set(k,i)});
+const nf=e.f.map(f=>f.map(i=>mp.has(i)?mp.get(i):i).filter((v,k,r)=>v!==r[(k+1)%r.length])),kp=nf.map(f=>f.length>2);if(e.fc)e.fc=e.fc.filter((c,i)=>kp[i]);e.f=nf.filter((f,i)=>kp[i]);clean(e);reset();up()}
+function fillH(){if(!sel)return;const vs=vsel();if(vs.size<3)return;const e=sel.userData.em,c=new Map(),dr=[];e.f.forEach(f=>f.forEach((a,k)=>{const b=f[(k+1)%f.length],q=ek(a,b);c.set(q,(c.get(q)||0)+1);dr.push([a,b,q])}));
+const nx=new Map();dr.forEach(([a,b,q])=>{if(c.get(q)===1&&vs.has(a)&&vs.has(b))nx.set(b,a)});if(nx.size<3)return;
+const s0=[...nx.keys()][0],F=[s0];let v=nx.get(s0);while(v!==undefined&&v!==s0&&F.length<5000){F.push(v);v=nx.get(v)}if(v!==s0||F.length<3)return;push();if(e.fc)e.fc.push(e.fc[0]);e.f.push(F);reset();up()}
+function separate(){if(!sel||sm!=='f'||!SEL.f.size)return;push();const o=sel,e=o.userData.em,F=[...SEL.f],mp=new Map(),V=[],nf=F.map(i=>e.f[i].map(v=>{if(!mp.has(v)){mp.set(v,V.length);V.push(e.v[v].slice())}return mp.get(v)})),em={v:V,f:nf};if(e.fc)em.fc=F.map(i=>e.fc[i]);
+const kp=e.f.map((f,i)=>!SEL.f.has(i));e.f=e.f.filter((f,i)=>kp[i]);if(e.fc)e.fc=e.fc.filter((c,i)=>kp[i]);clean(e);loading=true;add(o.userData.k,em);loading=false;const m=sel;m.position.copy(o.position);m.rotation.copy(o.rotation);m.scale.copy(o.scale);m.material.color.copy(o.material.color);build(o);ui()}
+function dupSel(){if(sm!=='f'||!SEL.f.size)return;push();const e=sel.userData.em,F=[...SEL.f],mp=new Map(),nf=F.map(i=>e.f[i].map(v=>{if(!mp.has(v)){mp.set(v,e.v.length);e.v.push(e.v[v].slice())}return mp.get(v)})),base=e.f.length;if(e.fc)F.forEach(i=>e.fc.push(e.fc[i]));e.f.push(...nf);SEL.f=new Set(nf.map((f,k)=>base+k));up()}
+function flat(ax){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em,c=ctr(vs);wts(vs).forEach((w,i)=>{e.v[i][ax]+=(c[ax]-e.v[i][ax])*w});up()}
+function selRing(){if(!sel||sm!=='e'||!SEL.e.size)return;SEL.e=new Set(ring(sel.userData.em,[...SEL.e][0]).X);ovl();ui()}
+function grow(){if(!sel)return;const e=sel.userData.em,vs=vsel(),ev=new Set(vs);e.f.forEach(f=>{if(f.some(v=>vs.has(v)))f.forEach(v=>ev.add(v))});
+if(sm==='v')SEL.v=ev;else if(sm==='e'){SEL.e=new Set();edges(e).forEach((x,k)=>{if(ev.has(x[0])&&ev.has(x[1]))SEL.e.add(k)})}else e.f.forEach((f,i)=>{if(f.some(v=>vs.has(v)))SEL.f.add(i)});ovl();ui()}
+function editUI(){const B=(a,c)=>'<div class="row"><b>'+c+'</b>'+BT(a,'data-op',x=>x==='lc'&&lcOn?'on':'')+'</div>';
+return '<div class="row">'+BT([['v','Sommet'],['e','Arête'],['f','Face']],'data-sm',x=>sm==x?'on':'')+'<button data-sa="all">Tout</button><button data-sa="none">Aucun</button></div>'
++B([['iv','Inverser'],['gr','Étendre'],['rg','Anneau']],'Sélection')
++B([['ex','Extruder'],['xi','Extr. indiv.'],['xe','Extr. arêtes'],['in','Inset'],['lc','Coupe boucle'],['dpl','Dupliquer'],['fh','Remplir'],['sub','Subdiviser'],['cc','Subdiv. lisse']],'Créer')
++(lcOn?SL('Coupes','lcn',1,8,1,lcN)+'<p class="hint">Coupe boucle active : touche une arête de la forme pour la couper. Touche à nouveau le bouton pour la désactiver.</p>':'')
++B([['del','Supprimer'],['ds','Dissoudre'],['mg','Fusionner'],['wd','Souder'],['sep','Séparer'],['tr','Triangles'],['fl','Normales'],['sol','Solidifier'],['mxx','Miroir X'],['mxy','Miroir Y'],['mxz','Miroir Z']],'Modifier')
++B([['sp','Vers sphère'],['sv','Lisser'],['rd','Aléatoire'],['fx','Aplatir X'],['fy','Aplatir Y'],['fz','Aplatir Z']],'Déformer')
++SL('Pas','stp',.01,.5,.01,stp)+SL('Épaisseur','th',.01,.5,.01,th)+SL('Rayon doux','pr',0,2,.05,prop)
++'<div class="row"><b>Bouger</b>'+BT([['0,-1','X−'],['0,1','X+'],['1,-1','Y−'],['1,1','Y+'],['2,-1','Z−'],['2,1','Z+'],['n,-1','N−'],['n,1','N+']],'data-mv')+'</div>'
++'<div class="row"><b>Échelle</b>'+BT([['.9','−'],['1.1','+']],'data-sc')+'<b>Rotation</b>'+BT([['0,-15','X−'],['0,15','X+'],['1,-15','Y−'],['1,15','Y+'],['2,-15','Z−'],['2,15','Z+']],'data-rt')+'</div>'
++'<div class="row"><b>Couleur</b><input type="color" data-k="fcol" value="'+fcv+'"><button data-op="paint">Colorer les faces</button></div>'
++'<p class="hint">Face : sélectionne puis Extruder. Rayon doux : agit autour de la sélection. Souder fusionne les points très proches, utile après Miroir.</p>'}
+// outils restants : biseau, bisecter, pont, spin, poly build, cisaillement, aimant, zone/lasso
+let pbOn=false,selTool='',zp=null,spN=12;
+function bevel(){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em,w=th;
+[...vs].forEach(v=>{const F=[];e.f.forEach((f,i)=>{if(f.includes(v))F.push(i)});if(F.length<2)return;const nb=new Map(),np=u=>{if(!nb.has(u)){const a=e.v[v],b=e.v[u],d=Math.hypot(b[0]-a[0],b[1]-a[1],b[2]-a[2])||1;nb.set(u,e.v.length);e.v.push(a.map((x,j)=>x+(b[j]-x)/d*Math.min(w,d*.45)))}return nb.get(u)},rg2=new Map();
+F.forEach(i=>{const f=e.f[i],k=f.indexOf(v),p=f[(k+f.length-1)%f.length],n=f[(k+1)%f.length],pp=np(p),nn=np(n);rg2.set(nn,pp);e.f[i]=[...f.slice(0,k),pp,nn,...f.slice(k+1)]});
+const s0=[...rg2.keys()][0],cy=[s0];let x=rg2.get(s0);while(x!==undefined&&x!==s0&&cy.length<60){cy.push(x);x=rg2.get(x)}if(x===s0&&cy.length>2){if(e.fc)e.fc.push(e.fc[F[0]]);e.f.push(cy)}});
+clean(e);reset();up()}
+function bisect(ax){if(!sel)return;const vs=vsel(),e=sel.userData.em,c=vs.size?ctr(vs)[ax]:0,D=e.v.map(p=>p[ax]-c),mid=new Map(),eps=1e-6,mk=(a,b)=>{const k=ek(a,b);if(!mid.has(k)){const t=D[a]/(D[a]-D[b]);mid.set(k,e.v.length);e.v.push(e.v[a].map((x,j)=>x+(e.v[b][j]-x)*t))}return mid.get(k)};push();
+const NF=[],FC=[];e.f.forEach((f,fi)=>{const col=e.fc?e.fc[fi]:0;if(f.every(i=>D[i]>=-eps)||f.every(i=>D[i]<=eps)){NF.push(f);FC.push(col);return}
+const A=[],B=[];f.forEach((a,k)=>{const b=f[(k+1)%f.length];if(Math.abs(D[a])<=eps){A.push(a);B.push(a)}else(D[a]>0?A:B).push(a);if(Math.abs(D[a])>eps&&Math.abs(D[b])>eps&&D[a]*D[b]<0){const m=mk(a,b);A.push(m);B.push(m)}});
+[A,B].forEach(P=>{if(P.length>2){NF.push(P);FC.push(col)}})});e.f=NF;if(e.fc)e.fc=FC;reset();up()}
+function bridge(){if(!sel||sm!=='f'||SEL.f.size!==2)return;const e=sel.userData.em,[a,b]=[...SEL.f],A=e.f[a],B=e.f[b],n=A.length;if(B.length!==n)return;push();let bk=0,bs=1e9;
+for(let k=0;k<n;k++){let t=0;for(let i=0;i<n;i++){const p=e.v[A[i]],q=e.v[B[(k-i+n)%n]];t+=Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2])}if(t<bs){bs=t;bk=k}}
+const W=[];for(let i=0;i<n;i++)W.push([A[i],A[(i+1)%n],B[(bk-i-1+2*n)%n],B[(bk-i+n)%n]]);
+const col=e.fc?e.fc[a]:0,kp=e.f.map((f,i)=>i!==a&&i!==b);e.f=e.f.filter((f,i)=>kp[i]);if(e.fc){e.fc=e.fc.filter((c,i)=>kp[i]);W.forEach(()=>e.fc.push(col))}e.f.push(...W);reset();up()}
+function spin(ax){if(!sel||sm!=='e'||!SEL.e.size)return;push();const e=sel.userData.em,ed=[...SEL.e].map(k=>k.split('_').map(Number)),idx=[...new Set(ed.flat())],[p,q]=[[1,2],[2,0],[0,1]][ax],N=spN,rows=[new Map(idx.map(i=>[i,i]))];
+for(let t=1;t<N;t++){const a=t/N*6.2832,C=Math.cos(a),S=Math.sin(a),m=new Map();idx.forEach(i=>{const v=e.v[i].slice(),x=v[p],y=v[q];v[p]=x*C-y*S;v[q]=x*S+y*C;m.set(i,e.v.length);e.v.push(v)});rows.push(m)}
+const F=[];ed.forEach(([a,b])=>{for(let t=0;t<N;t++){const r0=rows[t],r1=rows[(t+1)%N];F.push([r0.get(a),r0.get(b),r1.get(b),r1.get(a)])}});
+if(e.fc)F.forEach(()=>e.fc.push(e.fc[0]));e.f.push(...F);reset();up()}
+function pbTap(x,y){const e=sel.userData.em;sel.updateMatrixWorld();let b=null,bd=3600;for(const[k,[a,c]]of edges(e)){const A=proj(e.v[a]),B=proj(e.v[c]),d=((A[0]+B[0])/2-x)**2+((A[1]+B[1])/2-y)**2;if(d<bd){bd=d;b=k}}
+if(b){const fi=e.f.findIndex(f=>f.some((v,j)=>ek(v,f[(j+1)%f.length])===b));if(fi<0)return;push();const f=e.f[fi],j=f.findIndex((v,j)=>ek(v,f[(j+1)%f.length])===b),u=f[j],w=f[(j+1)%f.length],cen=[0,1,2].map(t=>f.reduce((s,i)=>s+e.v[i][t],0)/f.length),d=[0,1,2].map(t=>(e.v[u][t]+e.v[w][t])/2-cen[t]),l=Math.hypot(...d)||1,nu=e.v.length;e.v.push(e.v[u].map((q,t)=>q+d[t]/l*.3),e.v[w].map((q,t)=>q+d[t]/l*.3));if(e.fc)e.fc.push(e.fc[fi]);e.f.push([w,u,nu,nu+1]);up();return}
+const h=hit(x,y,[sel]);if(h){push();const fi=sel.userData.t2f[h.faceIndex],kp=e.f.map((f,i)=>i!==fi);e.f=e.f.filter((f,i)=>kp[i]);if(e.fc)e.fc=e.fc.filter((c,i)=>kp[i]);clean(e);up()}}
+function shear(p,q,k){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em,c=ctr(vs);wts(vs).forEach((w,i)=>{e.v[i][p]+=k*(e.v[i][q]-c[q])*w});up()}
+function snapG(){if(!sel)return;const vs=vsel();if(!vs.size)return;push();const e=sel.userData.em;vs.forEach(i=>{for(let j=0;j<3;j++)e.v[i][j]=Math.round(e.v[i][j]/stp)*stp});up()}
+const inPoly=(x,y,P)=>{let c=false;for(let i=0,j=P.length-1;i<P.length;j=i++){const a=P[i],b=P[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c};
+function zpoly(){const l=zp.p[zp.p.length-1],s0=zp.s;return selTool==='box'?[s0,[l[0],s0[1]],l,[s0[0],l[1]]]:zp.p}
+function zdraw(){const r=view.getBoundingClientRect();$('#zv').innerHTML='<polygon points="'+zpoly().map(p=>(p[0]-r.left)+','+(p[1]-r.top)).join(' ')+'" fill="rgba(255,214,10,.2)" stroke="#ffd60a" stroke-width="2" stroke-dasharray="6 4"/>'}
+function zsel(P){const e=sel.userData.em;sel.updateMatrixWorld();const ins=e.v.map(p=>{const q=proj(p);return inPoly(q[0],q[1],P)});
+if(sm==='v')ins.forEach((b,i)=>{if(b)SEL.v.add(i)});else if(sm==='e')edges(e).forEach((x,k)=>{if(ins[x[0]]&&ins[x[1]])SEL.e.add(k)});else e.f.forEach((f,i)=>{if(f.every(v=>ins[v]))SEL.f.add(i)});ovl();ui()}
+function zone(e,ph){if(ph==='down'){if(!(mode==='edit'&&sel&&selTool))return false;cv.setPointerCapture(e.pointerId);zp={s:[e.clientX,e.clientY],p:[[e.clientX,e.clientY]]};zdraw();return true}
+if(!zp)return false;if(ph==='move'){zp.p.push([e.clientX,e.clientY]);zdraw();return true}
+const P=zpoly();zp=null;$('#zv').innerHTML='';zsel(P);return true}
+function editUI(){const on=x=>(x==='lc'&&lcOn)||(x==='pb'&&pbOn)||(x==='zb'&&selTool==='box')||(x==='zl'&&selTool==='lasso')?'on':'',B=(a,c)=>'<div class="row"><b>'+c+'</b>'+BT(a,'data-op',on)+'</div>';
+return '<div class="row">'+BT([['v','Sommet'],['e','Arête'],['f','Face']],'data-sm',x=>sm==x?'on':'')+'<button data-sa="all">Tout</button><button data-sa="none">Aucun</button></div>'
++B([['zb','Zone'],['zl','Lasso'],['iv','Inverser'],['gr','Étendre'],['rg','Anneau']],'Sélection')
++B([['ex','Extruder'],['xi','Extr. indiv.'],['xe','Extr. arêtes'],['in','Inset'],['bv','Biseau'],['lc','Coupe boucle'],['pb','Poly Build'],['dpl','Dupliquer'],['fh','Remplir'],['br','Pont'],['spx','Spin X'],['spy','Spin Y'],['spz','Spin Z'],['sub','Subdiviser'],['cc','Subdiv. lisse']],'Créer')
++B([['bix','Bisecter X'],['biy','Bisecter Y'],['biz','Bisecter Z']],'Couteau')
++(lcOn?SL('Coupes','lcn',1,8,1,lcN)+'<p class="hint">Coupe boucle active : touche une arête pour la couper. Touche le bouton pour la désactiver.</p>':'')
++(pbOn?'<p class="hint">Poly Build actif : touche près d’une arête pour ajouter un carré, au centre d’une face pour la supprimer.</p>':'')
++(selTool?'<p class="hint">Zone ou lasso actif : fais glisser le doigt sur la vue pour sélectionner. Touche le bouton pour revenir à la navigation.</p>':'')
++B([['del','Supprimer'],['ds','Dissoudre'],['mg','Fusionner'],['wd','Souder'],['sep','Séparer'],['tr','Triangles'],['fl','Normales'],['sol','Solidifier'],['mxx','Miroir X'],['mxy','Miroir Y'],['mxz','Miroir Z']],'Modifier')
++B([['sp','Vers sphère'],['sv','Lisser'],['rd','Aléatoire'],['fx','Aplatir X'],['fy','Aplatir Y'],['fz','Aplatir Z'],['sn','Aimanter grille']],'Déformer')
++'<div class="row"><b>Cisaillement</b>'+BT([['0,1,-1','X/Y−'],['0,1,1','X/Y+'],['1,2,-1','Y/Z−'],['1,2,1','Y/Z+'],['2,0,-1','Z/X−'],['2,0,1','Z/X+']],'data-sh')+'</div>'
++SL('Pas','stp',.01,.5,.01,stp)+SL('Épaisseur / largeur','th',.01,.5,.01,th)+SL('Rayon doux','pr',0,2,.05,prop)+SL('Segments spin','spn',3,32,1,spN)
++'<div class="row"><b>Bouger</b>'+BT([['0,-1','X−'],['0,1','X+'],['1,-1','Y−'],['1,1','Y+'],['2,-1','Z−'],['2,1','Z+'],['n,-1','N−'],['n,1','N+']],'data-mv')+'</div>'
++'<div class="row"><b>Échelle</b>'+BT([['.9','−'],['1.1','+']],'data-sc')+'<b>Rotation</b>'+BT([['0,-15','X−'],['0,15','X+'],['1,-15','Y−'],['1,15','Y+'],['2,-15','Z−'],['2,15','Z+']],'data-rt')+'</div>'
++'<div class="row"><b>Couleur</b><input type="color" data-k="fcol" value="'+fcv+'"><button data-op="paint">Colorer les faces</button></div>'
++'<p class="hint">Face : sélectionne puis Extruder. Rayon doux : agit autour de la sélection. Souder fusionne les points très proches, utile après Miroir.</p>'}
+// langues : fr, en, es, ar, zh
+const LI={en:0,es:1,ar:2,zh:3},LN={fr:'Français',en:'English',es:'Español',ar:'العربية',zh:'中文'};
+let lang='fr';
+const DICT={
+'par Ngoga Enock':['by Ngoga Enock','por Ngoga Enock','بواسطة Ngoga Enock','作者：Ngoga Enock'],
+'Langue':['Language','Idioma','اللغة','语言'],
+'Installer':['Install','Instalar','تثبيت','安装'],
+'Fichiers':['Files','Archivos','الملفات','文件'],
+'Afficher ou masquer le panneau':['Show or hide the panel','Mostrar u ocultar el panel','إظهار أو إخفاء اللوحة','显示或隐藏面板'],
+'Annuler':['Undo','Deshacer','تراجع','撤销'],
+'Rétablir':['Redo','Rehacer','إعادة','重做'],
+'Objet':['Object','Objeto','كائن','对象'],
+'Édition':['Edit','Edición','تحرير','编辑'],
+'Sculpt':['Sculpt','Esculpir','نحت','雕刻'],
+'Fichier':['File','Archivo','ملف','文件'],
+'Persp.':['Persp.','Persp.','منظور','透视'],
+'Devant':['Front','Frente','أمامي','前视'],
+'Droite':['Right','Derecha','يمين','右视'],
+'Dessus':['Top','Superior','علوي','顶视'],
+'Cadrer':['Frame','Encuadrar','تأطير','聚焦'],
+'Filaire':['Wireframe','Alambre','هيكل سلكي','线框'],
+'Axes':['Axes','Ejes','المحاور','坐标轴'],
+'Grille':['Grid','Cuadrícula','الشبكة','网格'],
+'↻ Tourne ton téléphone en mode paysage':['↻ Rotate your phone to landscape','↻ Gira el teléfono a horizontal','↻ أدر هاتفك إلى الوضع الأفقي','↻ 请将手机横屏'],
+"Installer l'application":['Install the app','Instalar la aplicación','تثبيت التطبيق','安装应用'],
+"iPhone (Safari) : touche Partager, puis « Sur l'écran d'accueil ».":['iPhone (Safari): tap Share, then "Add to Home Screen".','iPhone (Safari): toca Compartir y luego "Añadir a pantalla de inicio".','iPhone (Safari): اضغط مشاركة ثم "إضافة إلى الشاشة الرئيسية".','iPhone (Safari)：点按“分享”，然后选择“添加到主屏幕”。'],
+"Android (Chrome) : touche le menu ⋮, puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».":['Android (Chrome): tap the ⋮ menu, then "Install app" or "Add to Home screen".','Android (Chrome): toca el menú ⋮ y luego "Instalar aplicación" o "Añadir a pantalla de inicio".','Android (Chrome): اضغط على القائمة ⋮ ثم "تثبيت التطبيق" أو "إضافة إلى الشاشة الرئيسية".','Android (Chrome)：点按菜单 ⋮，然后选择“安装应用”或“添加到主屏幕”。'],
+'Fermer':['Close','Cerrar','إغلاق','关闭'],
+'+ Plan':['+ Plane','+ Plano','+ مستوى','+ 平面'],
+'+ Cube':['+ Cube','+ Cubo','+ مكعب','+ 立方体'],
+'+ Sphère':['+ Sphere','+ Esfera','+ كرة','+ 球体'],
+'+ Cylindre':['+ Cylinder','+ Cilindro','+ أسطوانة','+ 圆柱体'],
+'+ Tore':['+ Torus','+ Toro','+ حلقة','+ 圆环'],
+'Déplacer':['Move','Mover','تحريك','移动'],
+'Tourner':['Rotate','Rotar','تدوير','旋转'],
+'Échelle':['Scale','Escala','تحجيم','缩放'],
+'Dupliquer':['Duplicate','Duplicar','تكرار','复制'],
+'Supprimer':['Delete','Eliminar','حذف','删除'],
+'Touche une forme pour la sélectionner, ou ajoutes-en une.':['Tap a shape to select it, or add one.','Toca una forma para seleccionarla o añade una.','المس شكلاً لتحديده أو أضف شكلاً جديداً.','点按形状进行选择，或添加一个形状。'],
+'Matériau':['Material','Material','المادة','材质'],
+'Mat':['Matte','Mate','مطفأ','哑光'],
+'Métal':['Metal','Metal','معدن','金属'],
+'Verre':['Glass','Vidrio','زجاج','玻璃'],
+'Réfraction':['Refraction','Refracción','انكسار','折射'],
+'Dépoli':['Frosted','Esmerilado','مصنفر','磨砂'],
+'Verre : la couleur choisie plus haut sert de teinte.':['Glass: the color chosen above is the tint.','Vidrio: el color elegido arriba es el tinte.','الزجاج: اللون المختار أعلاه هو الصبغة.','玻璃：上方选择的颜色即为色调。'],
+'Texture':['Texture','Textura','نسيج','纹理'],
+'Damier':['Checker','Damero','رقعة شطرنج','棋盘格'],
+'Briques':['Bricks','Ladrillos','طوب','砖块'],
+'Bois':['Wood','Madera','خشب','木纹'],
+'Retirer':['Remove','Quitar','إزالة','移除'],
+'Importer':['Import','Importar','استيراد','导入'],
+'Échelle texture':['Texture scale','Escala de textura','حجم النسيج','纹理缩放'],
+'Nom du projet':['Project name','Nombre del proyecto','اسم المشروع','项目名称'],
+'Enregistrer':['Save','Guardar','حفظ','保存'],
+'Ouvrir':['Open','Abrir','فتح','打开'],
+'Suppr.':['Delete','Borrar','حذف','删除'],
+'Exporter OBJ':['Export OBJ','Exportar OBJ','تصدير OBJ','导出 OBJ'],
+'Exporter .json':['Export .json','Exportar .json','تصدير .json','导出 .json'],
+"Les projets sont gardés dans le navigateur de ton téléphone. Les exports se téléchargent dans l'application installée.":['Projects are kept in your phone browser. Exports download in the installed app.','Los proyectos se guardan en el navegador del teléfono. Las exportaciones se descargan en la aplicación instalada.','تُحفظ المشاريع في متصفح هاتفك. تُنزَّل الملفات المصدَّرة في التطبيق المثبّت.','项目保存在手机浏览器中。导出文件需在已安装的应用中下载。'],
+'Enregistré':['Saved','Guardado','تم الحفظ','已保存'],
+'Ouvert':['Opened','Abierto','تم الفتح','已打开'],
+'Supprimé':['Deleted','Eliminado','تم الحذف','已删除'],
+'Export OBJ lancé':['OBJ export started','Exportación OBJ iniciada','بدأ تصدير OBJ','已开始导出 OBJ'],
+'Export lancé':['Export started','Exportación iniciada','بدأ التصدير','已开始导出'],
+'Action impossible ici':['Not possible here','No es posible aquí','غير ممكن هنا','此处无法操作'],
+'Projet importé':['Project imported','Proyecto importado','تم استيراد المشروع','项目已导入'],
+'Fichier non valide':['Invalid file','Archivo no válido','ملف غير صالح','文件无效'],
+"Sélectionne d'abord un objet en mode Objet.":['First select an object in Object mode.','Primero selecciona un objeto en modo Objeto.','حدّد كائناً أولاً في وضع الكائن.','请先在对象模式下选择一个对象。'],
+'Sommet':['Vertex','Vértice','رأس','顶点'],
+'Arête':['Edge','Arista','حافة','边'],
+'Face':['Face','Cara','وجه','面'],
+'Tout':['All','Todo','الكل','全选'],
+'Aucun':['None','Ninguno','لا شيء','取消'],
+'Sélection':['Selection','Selección','التحديد','选择'],
+'Zone':['Box','Zona','مربع','框选'],
+'Lasso':['Lasso','Lazo','لاسو','套索'],
+'Inverser':['Invert','Invertir','عكس','反选'],
+'Étendre':['Grow','Expandir','توسيع','扩展'],
+'Anneau':['Ring','Anillo','حلقة','环选'],
+'Créer':['Create','Crear','إنشاء','创建'],
+'Extruder':['Extrude','Extruir','بثق','挤出'],
+'Extr. indiv.':['Extrude indiv.','Extruir indiv.','بثق فردي','单独挤出'],
+'Extr. arêtes':['Extrude edges','Extruir aristas','بثق الحواف','挤出边'],
+'Inset':['Inset','Inset','إدخال','内插'],
+'Biseau':['Bevel','Bisel','شطف','倒角'],
+'Coupe boucle':['Loop cut','Corte en bucle','قطع حلقي','环切'],
+'Remplir':['Fill','Rellenar','ملء','填充'],
+'Pont':['Bridge','Puente','جسر','桥接'],
+'Spin X':['Spin X','Girar X','دوران X','旋绕 X'],
+'Spin Y':['Spin Y','Girar Y','دوران Y','旋绕 Y'],
+'Spin Z':['Spin Z','Girar Z','دوران Z','旋绕 Z'],
+'Subdiviser':['Subdivide','Subdividir','تقسيم','细分'],
+'Subdiv. lisse':['Smooth subdiv.','Subdiv. suave','تقسيم ناعم','平滑细分'],
+'Couteau':['Knife','Cuchillo','سكين','刀具'],
+'Bisecter X':['Bisect X','Bisecar X','تنصيف X','二分 X'],
+'Bisecter Y':['Bisect Y','Bisecar Y','تنصيف Y','二分 Y'],
+'Bisecter Z':['Bisect Z','Bisecar Z','تنصيف Z','二分 Z'],
+'Coupe boucle active : touche une arête pour la couper. Touche le bouton pour la désactiver.':['Loop cut active: tap an edge to cut it. Tap the button again to turn it off.','Corte en bucle activo: toca una arista para cortarla. Toca el botón otra vez para desactivarlo.','قطع الحلقة مفعّل: المس حافة لقطعها. المس الزر مرة أخرى لإيقافه.','环切已开启：点按一条边进行切割。再次点按按钮可关闭。'],
+"Poly Build actif : touche près d'une arête pour ajouter un carré, au centre d'une face pour la supprimer.":['Poly Build active: tap near an edge to add a square, or the center of a face to delete it.','Poly Build activo: toca cerca de una arista para añadir un cuadrado, o el centro de una cara para eliminarla.','Poly Build مفعّل: المس قرب حافة لإضافة مربع، أو وسط وجه لحذفه.','Poly Build 已开启：点按边附近可添加方块，点按面中心可删除该面。'],
+'Zone ou lasso actif : fais glisser le doigt sur la vue pour sélectionner. Touche le bouton pour revenir à la navigation.':['Box or lasso active: drag your finger on the view to select. Tap the button to go back to navigation.','Zona o lazo activo: arrastra el dedo sobre la vista para seleccionar. Toca el botón para volver a navegar.','المربع أو اللاسو مفعّل: اسحب إصبعك على العرض للتحديد. المس الزر للعودة إلى التنقل.','框选或套索已开启：在视图上滑动手指进行选择。再次点按按钮可返回导航。'],
+'Modifier':['Modify','Modificar','تعديل','修改'],
+'Dissoudre':['Dissolve','Disolver','إذابة','溶解'],
+'Fusionner':['Merge','Fusionar','دمج','合并'],
+'Souder':['Weld','Soldar','لحام','焊接'],
+'Séparer':['Separate','Separar','فصل','分离'],
+'Triangles':['Triangles','Triángulos','مثلثات','三角化'],
+'Normales':['Normals','Normales','الاتجاهات','法线'],
+'Solidifier':['Solidify','Solidificar','تصليب','实体化'],
+'Miroir X':['Mirror X','Espejo X','انعكاس X','镜像 X'],
+'Miroir Y':['Mirror Y','Espejo Y','انعكاس Y','镜像 Y'],
+'Miroir Z':['Mirror Z','Espejo Z','انعكاس Z','镜像 Z'],
+'Déformer':['Deform','Deformar','تشويه','变形'],
+'Vers sphère':['To sphere','A esfera','إلى كرة','球形化'],
+'Lisser':['Smooth','Suavizar','تنعيم','平滑'],
+'Aléatoire':['Randomize','Aleatorio','عشوائي','随机'],
+'Aplatir X':['Flatten X','Aplanar X','تسطيح X','压平 X'],
+'Aplatir Y':['Flatten Y','Aplanar Y','تسطيح Y','压平 Y'],
+'Aplatir Z':['Flatten Z','Aplanar Z','تسطيح Z','压平 Z'],
+'Aimanter grille':['Snap to grid','Ajustar a cuadrícula','محاذاة للشبكة','吸附网格'],
+'Cisaillement':['Shear','Cizalla','قص','错切'],
+'Pas':['Step','Paso','الخطوة','步长'],
+'Épaisseur / largeur':['Thickness / width','Grosor / ancho','السماكة / العرض','厚度 / 宽度'],
+'Rayon doux':['Soft radius','Radio suave','نصف قطر ناعم','衰减半径'],
+'Segments spin':['Spin segments','Segmentos de giro','أجزاء الدوران','旋绕段数'],
+'Coupes':['Cuts','Cortes','القطع','切割数'],
+'Bouger':['Move','Mover','تحريك','平移'],
+'Rotation':['Rotation','Rotación','دوران','旋转'],
+'Couleur':['Color','Color','اللون','颜色'],
+'Colorer les faces':['Paint faces','Colorear caras','تلوين الأوجه','给面上色'],
+'Face : sélectionne puis Extruder. Rayon doux : agit autour de la sélection. Souder fusionne les points très proches, utile après Miroir.':['Face: select, then Extrude. Soft radius: acts around the selection. Weld merges very close points, useful after Mirror.','Cara: selecciona y luego Extruir. Radio suave: actúa alrededor de la selección. Soldar fusiona puntos muy cercanos, útil tras Espejo.','وجه: حدّد ثم بثق. نصف القطر الناعم: يؤثر حول التحديد. اللحام يدمج النقاط القريبة جداً، مفيد بعد الانعكاس.','面：先选择再挤出。衰减半径：作用于选区周围。焊接可合并非常接近的点，镜像后很有用。'],
+'Tirer':['Draw','Dibujar','سحب','拉出'],
+'Creuser':['Dig','Excavar','حفر','凹陷'],
+'Orbite':['Orbit','Órbita','مدار','环绕'],
+'Rayon':['Radius','Radio','نصف القطر','半径'],
+'Force':['Strength','Fuerza','القوة','强度'],
+'Subdivise la forme pour avoir plus de détails à sculpter. 1 doigt : sculpter. 2 doigts : zoom et déplacement.':['Subdivide the shape for more sculpting detail. 1 finger: sculpt. 2 fingers: zoom and pan.','Subdivide la forma para tener más detalle al esculpir. 1 dedo: esculpir. 2 dedos: zoom y desplazamiento.','قسّم الشكل للحصول على تفاصيل أكثر عند النحت. إصبع واحد: نحت. إصبعان: تكبير وتحريك.','先细分形状以获得更多雕刻细节。单指：雕刻。双指：缩放和平移。']
+};
+function t(s){if(lang==='fr')return s;const q=s.replace(/’/g,"'"),d=DICT[q];if(d)return d[LI[lang]];const m=q.match(/^(Enregistré|Ouvert|Supprimé) : (.*)$/);return m?DICT[m[1]][LI[lang]]+' : '+m[2]:s}
+function tn(root){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode()){if(n.parentNode.closest('script,style'))continue;const o=n.__o===undefined?(n.__o=n.nodeValue):n.__o,k=o.trim();if(!k)continue;const r=t(k);n.nodeValue=r===k?o:o.replace(k,r)}
+root.querySelectorAll('[title],[placeholder]').forEach(el=>{['title','placeholder'].forEach(a=>{if(el.hasAttribute(a)){const o=el.dataset['o'+a]||(el.dataset['o'+a]=el.getAttribute(a));el.setAttribute(a,t(o))}})})}
+function setLang(l){lang=l;try{localStorage.setItem('a3d-lang',l)}catch(x){}document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';tn(document.body);ui()}
+// impression 3D : configuration du plateau, vérification, export STL
+Object.assign(DICT,{
+'Impression 3D':['3D printing','Impresión 3D','طباعة ثلاثية الأبعاد','3D 打印'],
+'Plateau':['Bed','Plataforma','سطح الطباعة','打印平台'],
+'Plateau X (mm)':['Bed X (mm)','Plataforma X (mm)','سطح الطباعة X (مم)','平台 X（毫米）'],
+'Plateau Y (mm)':['Bed Y (mm)','Plataforma Y (mm)','سطح الطباعة Y (مم)','平台 Y（毫米）'],
+'Plateau Z (mm)':['Bed Z (mm)','Plataforma Z (mm)','سطح الطباعة Z (مم)','平台 Z（毫米）'],
+'Hauteur du modèle (mm)':['Model height (mm)','Altura del modelo (mm)','ارتفاع النموذج (مم)','模型高度（毫米）'],
+'Résine 130':['Resin 130','Resina 130','راتنج 130','树脂 130'],
+'Cible : tout':['Target: all','Objetivo: todo','الهدف: الكل','目标：全部'],
+'Cible : sélection':['Target: selection','Objetivo: selección','الهدف: المحدد','目标：选中'],
+'Vérifier':['Check','Comprobar','فحص','检查'],
+'Ajuster au plateau':['Fit to bed','Ajustar a la plataforma','ملاءمة السطح','适应平台'],
+'Exporter STL':['Export STL','Exportar STL','تصدير STL','导出 STL'],
+'Partager STL':['Share STL','Compartir STL','مشاركة STL','分享 STL'],
+'Maillage fermé':['Closed mesh','Malla cerrada','شبكة مغلقة','网格封闭'],
+'Maillage ouvert':['Open mesh','Malla abierta','شبكة مفتوحة','网格未封闭'],
+'arêtes ouvertes':['open edges','aristas abiertas','حواف مفتوحة','条开放边'],
+'Tient sur le plateau':['Fits the bed','Cabe en la plataforma','يناسب السطح','可放入平台'],
+'Trop grand pour le plateau':['Too big for the bed','Demasiado grande','أكبر من السطح','超出平台'],
+'Aucun objet':['No object','Sin objeto','لا يوجد كائن','没有对象'],
+'Partage impossible ici':['Sharing not possible here','No se puede compartir aquí','المشاركة غير ممكنة هنا','此处无法分享'],
+'Export STL lancé':['STL export started','Exportación STL iniciada','بدأ تصدير STL','已开始导出 STL'],
+"Imprime en plastique PETG transparent ou en résine claire : le verre réel ne s'imprime pas à la maison. Paroi conseillée : 1,2 mm minimum. Ouvre le STL dans Cura, PrusaSlicer ou l'appli de ton imprimante.":['Print in clear PETG or clear resin: real glass cannot be printed at home. Recommended wall: 1.2 mm minimum. Open the STL in Cura, PrusaSlicer or your printer\'s app.','Imprime en PETG transparente o resina clara: el vidrio real no se imprime en casa. Pared recomendada: mínimo 1,2 mm. Abre el STL en Cura, PrusaSlicer o la app de tu impresora.','اطبع بمادة PETG شفافة أو راتنج شفاف: الزجاج الحقيقي لا يُطبع في المنزل. السماكة الموصى بها: 1.2 مم على الأقل. افتح ملف STL في Cura أو PrusaSlicer أو تطبيق طابعتك.','请使用透明 PETG 或透明树脂打印：真正的玻璃无法在家打印。建议壁厚至少 1.2 毫米。请在 Cura、PrusaSlicer 或打印机应用中打开 STL。']
+});
+let pcfg={x:220,y:220,z:250},pH=60,psAll=false,pMsg='';
+try{const c=JSON.parse(localStorage.getItem('a3d-printer')||'null');if(c){pcfg=c.c||pcfg;pH=c.h||pH}}catch(x){}
+function printUI(){return '<div class="row"><b>Impression 3D</b></div><div class="row"><b>Plateau</b>'+BT([['220,220,250','FDM 220'],['256,256,256','FDM 256'],['130,80,160','Résine 130']],'data-pp')+'</div>'
++SL('Plateau X (mm)','ppx',50,400,5,pcfg.x)+SL('Plateau Y (mm)','ppy',50,400,5,pcfg.y)+SL('Plateau Z (mm)','ppz',50,400,5,pcfg.z)+SL('Hauteur du modèle (mm)','phm',10,400,1,pH)
++'<div class="row"><button data-pt="tgt">'+(psAll?'Cible : tout':'Cible : sélection')+'</button><button data-pt="chk">Vérifier</button><button data-pt="fit">Ajuster au plateau</button></div>'
++'<div class="row"><button data-pt="stl">Exporter STL</button><button data-pt="share">Partager STL</button></div>'
++(pMsg?'<p class="hint">'+pMsg+'</p>':'')
++`<p class="hint">Imprime en plastique PETG transparent ou en résine claire : le verre réel ne s'imprime pas à la maison. Paroi conseillée : 1,2 mm minimum. Ouvre le STL dans Cura, PrusaSlicer ou l'appli de ton imprimante.</p>`}
+function pdata(){const L=psAll?objs:(sel?[sel]:[]);if(!L.length)return null;const tris=[],mn=new THREE.Vector3(1e9,1e9,1e9),mx=new THREE.Vector3(-1e9,-1e9,-1e9);let bad=0,V=0;
+L.forEach(o=>{o.updateMatrixWorld();const e=o.userData.em,W=e.v.map(p=>new THREE.Vector3(p[0],p[1],p[2]).applyMatrix4(o.matrixWorld)),c=new Map();V+=e.v.length;
+e.f.forEach(f=>{f.forEach((a,k)=>{const q=ek(a,f[(k+1)%f.length]);c.set(q,(c.get(q)||0)+1)});for(let k=1;k<f.length-1;k++){const tr=[W[f[0]],W[f[k]],W[f[k+1]]];tris.push(tr);tr.forEach(v=>{mn.min(v);mx.max(v)})}});
+c.forEach(n=>{if(n!==2)bad++})});return{tris,mn,mx,bad,V}}
+function stlBuf(D,k){const buf=new ArrayBuffer(84+50*D.tris.length),dv=new DataView(buf),cx=(D.mn.x+D.mx.x)/2,cy=(D.mn.y+D.mx.y)/2;dv.setUint32(80,D.tris.length,true);
+D.tris.forEach((tr,i)=>{const o=84+i*50,n=new THREE.Vector3().subVectors(tr[1],tr[0]).cross(new THREE.Vector3().subVectors(tr[2],tr[0])).normalize();[n.x,n.y,n.z].forEach((x,j)=>dv.setFloat32(o+j*4,x||0,true));tr.forEach((v,j)=>{dv.setFloat32(o+12+j*12,(v.x-cx)*k,true);dv.setFloat32(o+16+j*12,(v.y-cy)*k,true);dv.setFloat32(o+20+j*12,(v.z-D.mn.z)*k,true)})});return buf}
+function printAct(a){if(a==='tgt'){psAll=!psAll;pMsg='';return ui()}const D=pdata();if(!D){pMsg=t('Aucun objet');return ui()}
+const sz=D.mx.clone().sub(D.mn),H=sz.z||1e-6;
+if(a==='fit')pH=Math.max(10,Math.min(400,Math.floor(Math.min(pcfg.x*H/(sz.x||1e-6),pcfg.y*H/(sz.y||1e-6),pcfg.z)*.95)));
+const k=pH/H,w=[sz.x*k,sz.y*k,pH],fits=w[0]<=pcfg.x&&w[1]<=pcfg.y&&w[2]<=pcfg.z;
+try{localStorage.setItem('a3d-printer',JSON.stringify({c:pcfg,h:pH}))}catch(x){}
+pMsg=D.V+' v · '+D.tris.length+' △ · '+w.map(x=>x.toFixed(0)).join('×')+' mm · '+(D.bad?'✗ '+t('Maillage ouvert')+' ('+D.bad+' '+t('arêtes ouvertes')+')':'✓ '+t('Maillage fermé'))+' · '+(fits?'✓ '+t('Tient sur le plateau'):'✗ '+t('Trop grand pour le plateau'));
+if(a==='stl'||a==='share'){const name=(cur||'modele')+'.stl',blob=new Blob([stlBuf(D,k)],{type:'model/stl'});
+if(a==='stl'){try{const l=document.createElement('a');l.href=URL.createObjectURL(blob);l.download=name;document.body.appendChild(l);l.click();l.remove();pMsg=t('Export STL lancé')+' · '+pMsg}catch(x){pMsg=t('Action impossible ici')}}
+else{const file=new File([blob],name,{type:'model/stl'});if(navigator.canShare&&navigator.canShare({files:[file]}))navigator.share({files:[file],title:name}).catch(()=>{});else pMsg=t('Partage impossible ici')}}
+ui()}
+// ===== atmo 3D : intégration IA =====
+Object.assign(DICT,{
+'IA':['AI','IA','ذكاء اصطناعي','AI'],
+'Configuration IA':['AI setup','Configuración de IA','إعدادات الذكاء الاصطناعي','AI 设置'],
+'Fournisseur':['Provider','Proveedor','المزوّد','服务商'],
+'Compatible OpenAI':['OpenAI-compatible','Compatible con OpenAI','متوافق مع OpenAI','兼容 OpenAI'],
+'Adresse (URL)':['Address (URL)','Dirección (URL)','العنوان (URL)','地址 (URL)'],
+'Modèle':['Model','Modelo','النموذج','模型'],
+'Clé API':['API key','Clave API','مفتاح API','API 密钥'],
+'Exécution auto':['Auto-run','Ejecución automática','تنفيذ تلقائي','自动执行'],
+'Contrôle externe':['External control','Control externo','تحكم خارجي','外部控制'],
+'Étapes max':['Max steps','Pasos máx.','أقصى خطوات','最大步数'],
+'Effacer la clé':['Clear key','Borrar clave','مسح المفتاح','清除密钥'],
+'Envoyer':['Send','Enviar','إرسال','发送'],
+'Exécuter':['Run','Ejecutar','تنفيذ','执行'],
+"Code d'intégration":['Integration code','Código de integración','كود التكامل','集成代码'],
+"Dis à l'IA quoi modéliser…":['Tell the AI what to model…','Dile a la IA qué modelar…','أخبر الذكاء الاصطناعي بما تريد نمذجته…','告诉 AI 要建模什么…'],
+'Configuration enregistrée':['Configuration saved','Configuración guardada','تم حفظ الإعدادات','配置已保存'],
+'En attente : touche Exécuter':['Pending: tap Run','Pendiente: toca Ejecutar','قيد الانتظار: اضغط تنفيذ','待执行：请点按“执行”'],
+'Erreur':['Error','Error','خطأ','错误'],
+"La clé API reste sur ce téléphone et n'est envoyée qu'à l'adresse choisie. L'IA ne peut utiliser que les commandes de la liste ci-dessous.":['The API key stays on this phone and is only sent to the chosen address. The AI can only use the commands listed below.','La clave API se queda en este teléfono y solo se envía a la dirección elegida. La IA solo puede usar los comandos de la lista.','يبقى مفتاح API على هذا الهاتف ولا يُرسل إلا إلى العنوان المختار. لا يمكن للذكاء الاصطناعي استخدام سوى الأوامر المدرجة أدناه.','API 密钥仅保存在此手机上，只会发送到所选地址。AI 只能使用下方列出的命令。']
+});
+Object.assign(DICT,{
+'Mode gratuit':['Free mode','Modo gratis','الوضع المجاني','免费模式'],
+'Colle le JSON donné par un chatbot (ex. Claude.ai), puis touche Exécuter le JSON.':['Paste the JSON given by a chatbot (e.g. Claude.ai), then tap Run JSON.','Pega el JSON que te da un chatbot (p. ej. Claude.ai) y toca Ejecutar JSON.','الصق ملف JSON الذي يعطيه روبوت دردشة (مثل Claude.ai) ثم اضغط تنفيذ JSON.','粘贴聊天机器人（如 Claude.ai）给出的 JSON，然后点按“执行 JSON”。'],
+'Exécuter le JSON':['Run JSON','Ejecutar JSON','تنفيذ JSON','执行 JSON'],
+'Colle ici le JSON des commandes':['Paste the commands JSON here','Pega aquí el JSON de comandos','الصق هنا JSON الأوامر','在此粘贴命令 JSON'],
+'État de la scène (à donner au chatbot)':['Scene state (give it to the chatbot)','Estado de la escena (dáselo al chatbot)','حالة المشهد (أعطها لروبوت الدردشة)','场景状态（提供给聊天机器人）'],
+'JSON non valide':['Invalid JSON','JSON no válido','JSON غير صالح','JSON 无效']
+});
+Object.assign(DICT,{
+'🎤 Parler':['🎤 Speak','🎤 Hablar','🎤 تحدّث','🎤 语音'],
+'Gemini (gratuit)':['Gemini (free)','Gemini (gratis)','Gemini (مجاني)','Gemini（免费）'],
+'Mistral (gratuit)':['Mistral (free)','Mistral (gratis)','Mistral (مجاني)','Mistral（免费）'],
+'Micro non disponible':['Microphone not available','Micrófono no disponible','الميكروفون غير متاح','麦克风不可用']
+});
+function iaVoice(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){iaLog.push({r:'s',t:t('Micro non disponible')});return ui()}
+const r=new SR();r.lang={fr:'fr-FR',en:'en-US',es:'es-ES',ar:'ar-SA',zh:'zh-CN'}[lang]||'fr-FR';r.interimResults=false;
+r.onresult=e=>{iaCfg.prompt=(iaCfg.prompt+' '+e.results[0][0].transcript).trim();ui();if(iaCfg.key)iaSend()};r.onerror=()=>{iaLog.push({r:'s',t:t('Micro non disponible')});ui()};r.start()}
+const IA_REF=`You control the 3D modeling app "atmo 3D" (Z axis up; default shapes are about 2 units wide).
+Reply ONLY with JSON: {"say":"short message in the user's language","commands":[...],"done":true}
+Each command is an object with "cmd":
+add{shape:plane|cube|sphere|cylinder|torus}; select{index}; delete; duplicate;
+transform{pos:[x,y,z],rot:[x,y,z] in degrees,scale:[x,y,z]} (selected object);
+material{type:std|metal|glass,color:"#rrggbb",ior:1-2,rough:0-1,texture:damier|briques|bois|none};
+mode{mode:obj|edit|sculpt}; select_mode{mode:v|e|f};
+selection{action:all|none|invert|grow|ring}; select_where{axis:x|y|z,op:>|<|>=|<=,value,add} (current select mode, local coordinates); select_ids{verts:[i],edges:[[a,b]],faces:[i]};
+op{name:extrude|extrude_individual|extrude_edges|inset|bevel|subdivide|subsurf|solidify|delete_faces|dissolve|merge|weld|separate|triangulate|flip_normals|smooth|randomize|to_sphere|fill|bridge|duplicate_faces|paint_faces};
+param{name:step|thickness|soft|cuts|spin_segments|print_height,value};
+move{axis:x|y|z|n,amount}; scale_sel{factor}; rotate_sel{axis,deg}; mirror{axis}; bisect{axis}; spin{axis}; flatten{axis}; shear{a,b,k}; snap; loopcut{edge:[a,b],n};
+paint{color:"#rrggbb"} (colors the selected faces);
+mesh{v:[[x,y,z],...],f:[[i,j,k,...],...]} creates a custom object (faces counter-clockwise seen from outside, max 20000 vertices);
+brush{type:draw|dig|smooth,radius,strength}; view{name:persp|front|right|top}; frame; undo; redo;
+print{action:chk|fit|stl,height,bed:[x,y,z]}; save{name}; load{name}; lang{code:fr|en|es|ar|zh}.
+Edit tools need an object selected, mode edit and a selection (use select_mode then select_where or select_ids). Use the STATE json you receive. Max 40 commands per reply. Set done:true when finished.`;
+const IA_CODE=`// atmo 3D : API de contrôle (console, script ou page parente)
+ATMO.run({cmd:'add',shape:'sphere'});
+ATMO.run([{cmd:'material',type:'glass',color:'#88ccff'},{cmd:'transform',pos:[0,0,1.5]}]);
+const etat=ATMO.state();
+// page qui intègre l'appli dans une iframe (activer "Contrôle externe") :
+// frame.contentWindow.postMessage({atmo:[{cmd:'add',shape:'cube'}]},'*');
+// addEventListener('message',e=>console.log(e.data.atmo_result,e.data.state));
+
+// Prompt système pour n'importe quelle IA :
+`+IA_REF;
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+let iaCfg={prov:'anthropic',url:'https://api.anthropic.com/v1/messages',model:'claude-sonnet-5-5',key:'',auto:true,ext:false,steps:1,prompt:''},iaLog=[],iaBusy=false,iaPending=null;
+try{Object.assign(iaCfg,JSON.parse(localStorage.getItem('a3d-ai')||'{}'),{prompt:''})}catch(x){}
+const r2=x=>Math.round(x*1000)/1000,AX=a=>{const i=K.indexOf(String(a).toLowerCase());if(i<0)throw'axe';return i},HX=c=>parseInt(String(c).replace('#',''),16);
+function aState(){return{mode,selectMode:sm,selected:objs.indexOf(sel),params:{step:stp,thickness:th,soft:prop,cuts:lcN,spin_segments:spN,print_height:pH},brush:br,
+objects:objs.map((o,i)=>({i,shape:o.userData.k,verts:o.userData.em.v.length,faces:o.userData.em.f.length,pos:o.position.toArray().map(r2),rot:[o.rotation.x,o.rotation.y,o.rotation.z].map(x=>r2(x*57.2958)),scale:o.scale.toArray().map(r2),material:(o.userData.mt||{t:'std'}).t})),
+selection:sel?{verts:vsel().size,edges:SEL.e.size,faces:SEL.f.size}:null}}
+const SH={plane:'plane',cube:'cube',sphere:'sphere',cylinder:'cyl',cyl:'cyl',torus:'torus'};
+const OP2={extrude:extrude,extrude_individual:extI,extrude_edges:extE,inset:inset,bevel:bevel,subdivide:subAll,subsurf:cc,solidify:solid,delete_faces:delSel,dissolve:dissolve,merge:merge,weld:weld,separate:separate,triangulate:tri,flip_normals:flip,smooth:smoothV,randomize:rnd,to_sphere:toSph,fill:fillH,bridge:bridge,duplicate_faces:dupSel,paint_faces:paintF};
+function need(){if(!sel)throw'aucun objet sélectionné'}
+function exec(c){switch(c.cmd){
+case'add':if(!SH[c.shape])throw'forme';add(SH[c.shape]);break;
+case'select':pick(objs[c.index]||null);break;
+case'delete':del();break;case'duplicate':dup();break;
+case'transform':need();push();if(c.pos)sel.position.fromArray(c.pos.map(Number));if(c.rot)sel.rotation.set(...c.rot.map(d=>d*Math.PI/180));if(c.scale)sel.scale.fromArray(c.scale.map(Number));ui();break;
+case'material':{need();push();const m=MT();if(c.type){m.t=c.type==='glass'?'glass':c.type==='metal'?'metal':'std';mkMat(sel)}const u=sel.material.userData.u;
+if(c.color!==undefined){const hx=HX(c.color);if(sel.material.userData.glass){m.c=hx;u.uTint.value.set(hx)}else if(sel.userData.em.fc){sel.userData.em.fc=sel.userData.em.f.map(()=>hx);build(sel)}else sel.material.color.set(hx)}
+if(c.ior!=null&&u){m.ior=+c.ior;u.uIor.value=+c.ior}if(c.rough!=null&&u){m.rg=+c.rough;u.uRough.value=+c.rough;sel.material.roughness=.02+m.rg*.5}
+if(c.texture!==undefined){m.tex=c.texture==='none'?null:'p:'+c.texture;if(m.tex)sel.material.color.set(0xffffff);applyTex(sel)}ui();break}
+case'mode':if(!['obj','edit','sculpt','file','ia'].includes(c.mode))throw'mode';setMode(c.mode);break;
+case'select_mode':need();if(!['v','e','f'].includes(c.mode))throw'mode';setSM(c.mode);break;
+case'selection':need();({all:()=>selAll(true),none:()=>selAll(false),invert:inv,grow:grow,ring:selRing})[c.action]();break;
+case'select_where':{need();const e=sel.userData.em,ax=AX(c.axis),b=+c.value,f=v=>{const a=v[ax];return c.op==='>'?a>b:c.op==='<'?a<b:c.op==='>='?a>=b:c.op==='<='?a<=b:Math.abs(a-b)<.001};if(!c.add)reset();
+if(sm==='v')e.v.forEach((p,i)=>{if(f(p))SEL.v.add(i)});else if(sm==='e')edges(e).forEach((x,k)=>{if(f(e.v[x[0]])&&f(e.v[x[1]]))SEL.e.add(k)});else e.f.forEach((fc,i)=>{if(fc.every(v=>f(e.v[v])))SEL.f.add(i)});ovl();ui();break}
+case'select_ids':{need();reset();(c.verts||[]).forEach(i=>SEL.v.add(+i));(c.edges||[]).forEach(p=>SEL.e.add(ek(+p[0],+p[1])));(c.faces||[]).forEach(i=>SEL.f.add(+i));ovl();ui();break}
+case'op':need();if(!OP2[c.name])throw'outil';OP2[c.name]();break;
+case'param':{const n=c.name,v=+c.value;if(!isFinite(v))throw'valeur';if(n==='step')stp=v;else if(n==='thickness')th=v;else if(n==='soft')prop=v;else if(n==='cuts')lcN=Math.round(v);else if(n==='spin_segments')spN=Math.round(v);else if(n==='print_height')pH=v;else throw'param';ui();break}
+case'move':need();mv2(c.axis==='n'?'n':AX(c.axis),+c.amount);break;
+case'scale_sel':need();sc(+c.factor);break;case'rotate_sel':need();rot(AX(c.axis),+c.deg);break;
+case'mirror':need();mirror(AX(c.axis));break;case'bisect':need();bisect(AX(c.axis));break;case'spin':need();spin(AX(c.axis));break;case'flatten':need();flat(AX(c.axis));break;
+case'shear':need();shear(AX(c.a),AX(c.b),+c.k);break;case'snap':need();snapG();break;
+case'loopcut':need();loopCut(ek(+c.edge[0],+c.edge[1]),c.n||1);break;
+case'paint':need();fcv='#'+('000000'+HX(c.color).toString(16)).slice(-6);paintF();break;
+case'mesh':{const v=c.v,f=c.f;if(!Array.isArray(v)||!Array.isArray(f)||v.length>20000||f.length>40000)throw'taille';const V=v.map(p=>{if(!Array.isArray(p)||p.length!==3)throw'sommet';return p.map(x=>{x=+x;if(!isFinite(x))throw'nombre';return x})});const F=f.map(q=>{if(!Array.isArray(q)||q.length<3)throw'face';return q.map(i=>{i=Math.floor(+i);if(!(i>=0&&i<V.length))throw'indice';return i})});add('custom',{v:V,f:F});break}
+case'brush':if(c.type)br.t=c.type;if(c.radius)br.r=+c.radius;if(c.strength)br.s=+c.strength;ui();break;
+case'view':{const V={persp:[-.8,.5],front:[-Math.PI/2,0],right:[0,0],top:[-Math.PI/2,1.5607]}[c.name];if(!V)throw'vue';az=V[0];el=V[1];upd();break}
+case'frame':tgt.copy(sel?sel.position:new THREE.Vector3(0,0,.8));dist=6;upd();break;
+case'undo':undo();break;case'redo':rdo();break;
+case'print':if(c.height)pH=+c.height;if(c.bed)pcfg={x:+c.bed[0],y:+c.bed[1],z:+c.bed[2]};printAct(c.action||'chk');break;
+case'save':localStorage.setItem('a3d:'+String(c.name||'projet').replace(/[<>&"']/g,''),ser());ui();break;
+case'load':load(localStorage.getItem('a3d:'+c.name));break;
+case'lang':if(!LN[c.code])throw'langue';setLang(c.code);break;
+default:throw'commande inconnue'}}
+function run(cs){return[].concat(cs).slice(0,60).map(c=>{try{exec(c);return'ok'}catch(e){return'erreur : '+(e.message||e)}})}
+window.ATMO={run,state:aState,tools:()=>IA_REF};
+addEventListener('message',e=>{if(!iaCfg.ext||!e.data||!e.data.atmo)return;const r=run(e.data.atmo);if(e.source)e.source.postMessage({atmo_result:r,state:aState()},e.origin==='null'?'*':e.origin)});
+async function iaCall(msgs){const c=iaCfg;if(!c.key)throw new Error('clé API manquante');
+if(c.prov==='gemini'){const r=await fetch(c.url+encodeURIComponent(c.model)+':generateContent?key='+encodeURIComponent(c.key),{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:IA_REF}]},generationConfig:{responseMimeType:'application/json'},contents:msgs.map(m=>({role:m.role==='assistant'?'model':'user',parts:[{text:m.content}]}))})});const d=await r.json();if(!r.ok)throw new Error(d.error&&d.error.message||r.status);return((d.candidates||[{}])[0].content||{parts:[]}).parts.map(x=>x.text||'').join('')}
+if(c.prov==='anthropic'){const r=await fetch(c.url,{method:'POST',headers:{'content-type':'application/json','x-api-key':c.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:c.model,max_tokens:4096,system:IA_REF,messages:msgs})});const d=await r.json();if(!r.ok)throw new Error(d.error&&d.error.message||r.status);return(d.content||[]).map(x=>x.text||'').join('')}
+const r=await fetch(c.url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+c.key},body:JSON.stringify({model:c.model,messages:[{role:'system',content:IA_REF},...msgs]})});const d=await r.json();if(!r.ok)throw new Error(d.error&&d.error.message||r.status);return d.choices[0].message.content}
+async function iaSend(){const q=iaCfg.prompt.trim();if(!q||iaBusy)return;iaBusy=true;iaCfg.prompt='';iaLog.push({r:'u',t:q});ui();const msgs=[{role:'user',content:q+'\n\nSTATE:'+JSON.stringify(aState())}];
+try{for(let s=0;s<iaCfg.steps;s++){const out=await iaCall(msgs);msgs.push({role:'assistant',content:out});let j;try{j=JSON.parse(out.replace(/^```(?:json)?|```$/gm,'').trim())}catch(x){iaLog.push({r:'a',t:out});break}
+iaLog.push({r:'a',t:j.say||''});const cm=Array.isArray(j.commands)?j.commands.slice(0,40):[];
+if(!iaCfg.auto&&cm.length){iaPending=cm;iaLog.push({r:'s',t:t('En attente : touche Exécuter')+' ('+cm.length+')'});break}
+const res=cm.length?run(cm):[];if(cm.length)iaLog.push({r:'s',t:res.map((x,i)=>cm[i].cmd+': '+x).join(' · ')});if(j.done||!cm.length||s===iaCfg.steps-1)break;
+msgs.push({role:'user',content:'RESULTS:'+JSON.stringify(res)+'\nSTATE:'+JSON.stringify(aState())+'\nContinue or set done:true.'})}}catch(e){iaLog.push({r:'s',t:t('Erreur')+' : '+(e.message||e)})}
+iaBusy=false;ui()}
+function iaSave(){try{localStorage.setItem('a3d-ai',JSON.stringify({...iaCfg,prompt:'',manual:''}))}catch(x){}}
+function iaAct(a){if(a==='p-anthropic'){iaCfg.prov='anthropic';iaCfg.url='https://api.anthropic.com/v1/messages';iaCfg.model='claude-sonnet-5-5'}else if(a==='p-openai'){iaCfg.prov='openai';iaCfg.url='https://api.openai.com/v1/chat/completions';iaCfg.model=''}
+else if(a==='p-gemini'){iaCfg.prov='gemini';iaCfg.url='https://generativelanguage.googleapis.com/v1beta/models/';iaCfg.model='gemini-flash-latest'}else if(a==='p-mistral'){iaCfg.prov='openai';iaCfg.url='https://api.mistral.ai/v1/chat/completions';iaCfg.model='mistral-small-latest'}else if(a==='voice')return iaVoice();else if(a==='auto')iaCfg.auto=!iaCfg.auto;else if(a==='ext')iaCfg.ext=!iaCfg.ext;
+else if(a==='save'){iaSave();iaLog.push({r:'s',t:t('Configuration enregistrée')})}else if(a==='clear'){iaCfg.key='';iaSave()}
+else if(a==='man'){try{const j=JSON.parse(String(iaCfg.manual||'').replace(/^```(?:json)?|```$/gm,'').trim()),cm=Array.isArray(j)?j:(j.commands||[j]),res=run(cm);iaLog.push({r:'s',t:res.map((x,i)=>cm[i].cmd+': '+x).join(' · ')})}catch(x){iaLog.push({r:'s',t:t('JSON non valide')})}}else if(a==='send')return iaSend();else if(a==='run'&&iaPending){const cm=iaPending;iaPending=null;const res=run(cm);iaLog.push({r:'s',t:res.map((x,i)=>cm[i].cmd+': '+x).join(' · ')})}ui()}
+function iaUI(){const c=iaCfg,I=(k,l,ty)=>'<div class="row"><b>'+l+'</b><input type="'+(ty||'text')+'" data-ia="'+k+'" value="'+esc(c[k])+'" autocomplete="off"></div>';
+return '<div class="row"><b>Configuration IA</b></div><div class="row"><b>Fournisseur</b><button data-iab="p-anthropic" class="'+(c.prov==='anthropic'?'on':'')+'">Anthropic</button><button data-iab="p-openai" class="'+(c.prov==='openai'?'on':'')+'">Compatible OpenAI</button><button data-iab="p-gemini" class="'+(c.prov==='gemini'?'on':'')+'">Gemini (gratuit)</button><button data-iab="p-mistral">Mistral (gratuit)</button></div>'
++I('url','Adresse (URL)')+I('model','Modèle')+I('key','Clé API','password')
++'<div class="row"><button data-iab="auto" class="'+(c.auto?'on':'')+'">Exécution auto</button><button data-iab="ext" class="'+(c.ext?'on':'')+'">Contrôle externe</button><button data-iab="save">Enregistrer</button><button data-iab="clear">Effacer la clé</button></div>'
++SL('Étapes max','ias',1,5,1,c.steps)
++'<div class="row"><textarea data-ia="prompt" rows="3" placeholder="Dis à l\'IA quoi modéliser…">'+esc(c.prompt)+'</textarea></div>'
++'<div class="row"><button data-iab="send">'+(iaBusy?'…':'Envoyer')+'</button><button data-iab="voice">🎤 Parler</button>'+(iaPending?'<button data-iab="run" class="on">Exécuter</button>':'')+'</div>'
++'<div class="row" style="display:block;max-height:150px;overflow:auto">'+iaLog.slice(-12).map(m=>'<p class="hint">'+(m.r==='u'?'▸ ':m.r==='a'?'IA : ':'⚙ ')+esc(m.t)+'</p>').join('')+'</div>'
++`<p class="hint">La clé API reste sur ce téléphone et n'est envoyée qu'à l'adresse choisie. L'IA ne peut utiliser que les commandes de la liste ci-dessous.</p>`
++'<div class="row"><b>Mode gratuit</b></div><p class="hint">Colle le JSON donné par un chatbot (ex. Claude.ai), puis touche Exécuter le JSON.</p><div class="row"><textarea data-ia="manual" rows="3" placeholder="Colle ici le JSON des commandes">'+esc(c.manual||'')+'</textarea></div><div class="row"><button data-iab="man">Exécuter le JSON</button></div><div class="row"><b>État de la scène (à donner au chatbot)</b></div><div class="row"><textarea readonly rows="3">'+esc(JSON.stringify(aState()))+'</textarea></div>'
++'<div class="row"><b>Code d\'intégration</b></div><div class="row"><textarea readonly rows="9">'+esc(IA_CODE)+'</textarea></div>'}
+
+// fichiers : projets enregistrés, export, import
+const ls=()=>{try{return Object.keys(localStorage).filter(k=>k.startsWith('a3d:')).map(k=>k.slice(4))}catch(x){return[]}};
+const ser=()=>JSON.stringify(objs.map(o=>({k:o.userData.k,em:o.userData.em,p:o.position.toArray(),r:[o.rotation.x,o.rotation.y,o.rotation.z],s:o.scale.toArray(),c:o.material.userData.glass?o.userData.mt.c:o.material.color.getHex(),m:o.userData.mt||null})));
+function load(t){const a=JSON.parse(t);push();loading=true;pick(null);objs.splice(0).forEach(o=>scene.remove(o));a.forEach(d=>{add(d.k,d.em);sel.position.fromArray(d.p);sel.rotation.set(d.r[0],d.r[1],d.r[2]);sel.scale.fromArray(d.s);sel.material.color.setHex(d.c);if(d.m){sel.userData.mt=d.m;mkMat(sel)}});loading=false;pick(objs[0]||null)}
+function toObj(){let s='',off=1;objs.forEach((o,n)=>{o.updateMatrixWorld();const e=o.userData.em;s+='o forme'+n+'\n';e.v.forEach(p=>{const v=new THREE.Vector3(p[0],p[1],p[2]).applyMatrix4(o.matrixWorld);s+='v '+v.x+' '+v.z+' '+(-v.y)+'\n'});e.f.forEach(f=>s+='f '+f.map(i=>i+off).join(' ')+'\n');off+=e.v.length});return s}
+function dl2(name,txt,mime){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:mime}));a.download=name;document.body.appendChild(a);a.click();a.remove()}
+function fileAct(d){try{
+if(d.f==='save'){const n=($('#nm').value||'projet').replace(/[<>&"']/g,'').trim()||'projet';localStorage.setItem('a3d:'+n,ser());cur=n;msg='Enregistré : '+n}
+else if(d.f==='open'){load(localStorage.getItem('a3d:'+d.n));cur=d.n;msg='Ouvert : '+d.n}
+else if(d.f==='rm'){localStorage.removeItem('a3d:'+d.n);msg='Supprimé : '+d.n}
+else if(d.f==='obj'){dl2((cur||'modele')+'.obj',toObj(),'text/plain');msg='Export OBJ lancé'}
+else if(d.f==='json'){dl2((cur||'projet')+'.json',ser(),'application/json');msg='Export lancé'}
+}catch(x){msg='Action impossible ici'}ui()}
+// interface
+function SL(l,k,min,max,st,v,i){return `<label class="sl">${l}<input type="range" data-k="${k}" ${i!==undefined?`data-i="${i}"`:''} min="${min}" max="${max}" step="${st}" value="${v}"><output>${(+v).toFixed(2)}</output></label>`}
+const BT=(a,att,cls)=>a.map(([x,y])=>`<button ${att}="${x}" ${cls?`class="${cls(x)}"`:''}>${y}</button>`).join('');
+function ui(){let h='';
+if(mode==='obj'){
+h+='<div class="row">'+BT([['plane','+ Plan'],['cube','+ Cube'],['sphere','+ Sphère'],['cyl','+ Cylindre'],['torus','+ Tore']],'data-add')+'</div>';
+if(sel){const T=TF[tf];
+h+='<div class="row">'+BT([['pos','Déplacer'],['rot','Tourner'],['scl','Échelle']],'data-tf',x=>tf==x?'on':'')+`<button data-act="dup">Dupliquer</button><button data-act="del">Supprimer</button><input type="color" data-k="col" value="#${cval(sel)}"></div>`;
+h+=['X','Y','Z'].map((l,i)=>SL(l,'ax',T.min,T.max,T.st,getv(i),i)).join('')+matUI()}
+else h+='<p class="hint">Touche une forme pour la sélectionner, ou ajoutes-en une.</p>'}
+else if(mode==='file'){
+h+=`<div class="row"><input type="text" id="nm" placeholder="Nom du projet" value="${cur}"><button data-f="save">Enregistrer</button></div>`;
+h+=ls().map(n=>`<div class="row"><span style="flex:1">${n}</span><button data-f="open" data-n="${n}">Ouvrir</button><button data-f="rm" data-n="${n}">Suppr.</button></div>`).join('');
+h+='<div class="row"><button data-f="obj">Exporter OBJ</button><button data-f="json">Exporter .json</button><label class="fb">Importer<input type="file" id="imp" accept=".json,application/json" hidden></label></div>';
+h+=`<p class="hint">${msg||'Les projets sont gardés dans le navigateur de ton téléphone. Les exports se téléchargent dans l’application installée.'}</p>`}
+else if(!sel)h='<p class="hint">Sélectionne d’abord un objet en mode Objet.</p>';
+else if(mode==='edit'){h=editUI()}else if(false){
+h+='<div class="row">'+BT([['v','Sommet'],['e','Arête'],['f','Face']],'data-sm',x=>sm==x?'on':'')+'<button data-sa="all">Tout</button><button data-sa="none">Aucun</button></div>';
+h+='<div class="row">'+BT([['ex','Extruder'],['in','Inset'],['del','Supprimer'],['sub','Subdiviser'],['cc','Subdiv. lisse'],['sol','Solidifier'],['mg','Fusionner']],'data-op')+'</div><div class="row"><b>Couleur</b><input type="color" data-k="fcol" value="'+fcv+'"><button data-op="paint">Colorer les faces</button></div>';
+h+=SL('Pas','stp',.01,.5,.01,stp)+SL('Épaisseur','th',.01,.5,.01,th)+'<div class="row">'+BT([['0,-1','X−'],['0,1','X+'],['1,-1','Y−'],['1,1','Y+'],['2,-1','Z−'],['2,1','Z+'],['n,-1','N−'],['n,1','N+']],'data-mv')+BT([['.9','Échelle −'],['1.1','Échelle +']],'data-sc')+'</div>'+'<p class="hint">Face : touche une face puis Extruder. N = le long de la normale. Colorer : choisis une couleur, sélectionne des faces, puis touche Colorer les faces. Solidifier donne de l’épaisseur à toute la forme. Subdivisions limitées à 3000 faces.</p>'}
+else{
+h+='<div class="row">'+BT([['draw','Tirer'],['dig','Creuser'],['smooth','Lisser']],'data-br',x=>br.t==x?'on':'')+`<button data-orb="1" class="${orb?'on':''}">Orbite</button><button data-op="sub">Subdiviser</button><button data-op="cc">Subdiv. lisse</button></div>`+SL('Rayon','br',.1,2,.05,br.r)+SL('Force','bs',.1,1,.05,br.s)+'<p class="hint">Subdivise la forme pour avoir plus de détails à sculpter. 1 doigt : sculpter. 2 doigts : zoom et déplacement.</p>'}
+$('#ctx').innerHTML=mode==='ia'?iaUI():h+(mode==='file'?printUI():'');tn($('#ctx'))}
+$('#ctx').addEventListener('input',e=>{const t=e.target,k=t.dataset.k;if(t.dataset.ia){iaCfg[t.dataset.ia]=t.value;return}if(!k)return;if(k==='fcol'){fcv=t.value;return}if(k==='col'){const hx=parseInt(t.value.slice(1),16),e=sel.userData.em;if(sel.material.userData.glass){MT().c=hx;sel.material.userData.u.uTint.value.set(hx)}else if(e.fc){e.fc=e.f.map(()=>hx);build(sel)}else sel.material.color.set(hx);return}const v=+t.value;
+if(k==='ax')setv(+t.dataset.i,v);else if(k==='stp')stp=v;else if(k==='th')th=v;else if(k==='pr')prop=v;else if(k==='lcn')lcN=Math.round(v);else if(k==='spn')spN=Math.round(v);else if(k==='ppx')pcfg.x=v;else if(k==='ppy')pcfg.y=v;else if(k==='ppz')pcfg.z=v;else if(k==='phm')pH=v;else if(k==='ias')iaCfg.steps=Math.round(v);else if(k==='rg'){MT().rg=v;const u=sel.material.userData.u;if(u){u.uRough.value=v;sel.material.roughness=.02+v*.5}}else if(k==='ior'){MT().ior=v;const u=sel.material.userData.u;if(u)u.uIor.value=v}else if(k==='ts'){MT().ts=v;if(sel.material.map)sel.material.map.repeat.set(v,v)}else if(k==='br')br.r=v;else if(k==='bs')br.s=v;
+if(t.nextElementSibling)t.nextElementSibling.textContent=v.toFixed(2)});
+$('#ctx').addEventListener('change',e=>{if(e.target.id==='tx'&&e.target.files[0]&&sel){impTex(e.target.files[0]);return}if(e.target.id==='imp'&&e.target.files[0]){const r=new FileReader();r.onload=()=>{try{load(r.result);msg='Projet importé'}catch(x){msg='Fichier non valide'}ui()};r.readAsText(e.target.files[0])}});
+$('#ctx').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+if(d.add)add(d.add);else if(d.tf){tf=d.tf;ui()}else if(d.act==='dup')dup();else if(d.act==='del')del();
+else if(d.br){br.t=d.br;ui()}else if(d.orb){orb=!orb;ui()}
+else if(d.mt){push();MT().t=d.mt;mkMat(sel);ui()}else if(d.tx){push();const m=MT();m.tex=d.tx==='none'?null:'p:'+d.tx;if(m.tex)sel.material.color.set(0xffffff);applyTex(sel);ui()}else if(d.sm)setSM(d.sm);else if(d.sa)selAll(d.sa==='all')||ui();
+else if(d.op){({ex:extrude,in:inset,del:delSel,sub:subAll,mg:merge,cc:cc,sol:solid,paint:paintF,xi:extI,xe:extE,lc:()=>{lcOn=!lcOn;pbOn=false;ui()},ds:dissolve,tr:tri,fl:flip,iv:inv,sp:toSph,sv:smoothV,rd:rnd,mxx:()=>mirror(0),mxy:()=>mirror(1),mxz:()=>mirror(2),wd:weld,fh:fillH,sep:separate,dpl:dupSel,fx:()=>flat(0),fy:()=>flat(1),fz:()=>flat(2),rg:selRing,gr:grow,bv:bevel,pb:()=>{pbOn=!pbOn;lcOn=false;ui()},br:bridge,spx:()=>spin(0),spy:()=>spin(1),spz:()=>spin(2),bix:()=>bisect(0),biy:()=>bisect(1),biz:()=>bisect(2),sn:snapG,zb:()=>{selTool=selTool==='box'?'':'box';ui()},zl:()=>{selTool=selTool==='lasso'?'':'lasso';ui()}})[d.op]()}
+else if(d.mv){const[a,s]=d.mv.split(',');mv2(a==='n'?'n':+a,+s*stp)}
+else if(d.pp){const[a,b,c]=d.pp.split(',').map(Number);pcfg={x:a,y:b,z:c};pMsg='';ui()}else if(d.pt){printAct(d.pt)}else if(d.iab){iaAct(d.iab)}else if(d.sh){const[p,q,g]=d.sh.split(',');shear(+p,+q,+g*stp*5)}else if(d.rt){const[a,g]=d.rt.split(',');rot(+a,+g)}else if(d.sc)sc(+d.sc);else if(d.f)fileAct(d)});
+$('#modes').addEventListener('click',e=>{const b=e.target.closest('button');if(b)setMode(b.dataset.m)});
+$('#viewrow').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+if(d.v){const V={persp:[-.8,.5],front:[-Math.PI/2,0],right:[0,0],top:[-Math.PI/2,1.5607]}[d.v];az=V[0];el=V[1]}
+else if(d.a==='frame'){tgt.copy(sel?sel.position:new THREE.Vector3(0,0,.8));dist=6}
+else if(d.a==='undo')undo();else if(d.a==='redo')rdo();
+else if(d.d){if(d.d==='wire'){wire=!wire;objs.forEach(o=>o.material.wireframe=wire)}else if(d.d==='axes')axes.visible=!axes.visible;else grid.visible=!grid.visible;b.classList.toggle('on')}
+upd()});
+// navigation et saisie
+const P=new Map();let moved=0,sculpting=false;
+function pan(dx,dy){const s=dist*.0018,r=new THREE.Vector3().setFromMatrixColumn(cam.matrixWorld,0),u=new THREE.Vector3().setFromMatrixColumn(cam.matrixWorld,1);tgt.addScaledVector(r,-dx*s).addScaledVector(u,dy*s)}
+cv.addEventListener('pointerdown',e=>{if(zone(e,'down'))return;cv.setPointerCapture(e.pointerId);P.set(e.pointerId,{x:e.clientX,y:e.clientY});moved=0;
+if(P.size>1){sculpting=false;return}
+if(mode==='sculpt'&&sel&&!orb&&e.button!==2){const h=hit(e.clientX,e.clientY,[sel]);if(h){push();sculpting=true;sculpt(h)}}});
+cv.addEventListener('pointermove',e=>{if(zone(e,'move'))return;const p=P.get(e.pointerId);if(!p)return;const dx=e.clientX-p.x,dy=e.clientY-p.y;moved+=Math.abs(dx)+Math.abs(dy);
+if(P.size===1){if(sculpting){const h=hit(e.clientX,e.clientY,[sel]);if(h)sculpt(h)}
+else if(e.shiftKey||e.buttons===2)pan(dx,dy);else{az-=dx*.008;el=Math.max(-1.55,Math.min(1.55,el+dy*.008))}}
+else if(P.size===2){const o=[...P.entries()].find(([id])=>id!==e.pointerId)[1],d0=Math.hypot(p.x-o.x,p.y-o.y),d1=Math.hypot(e.clientX-o.x,e.clientY-o.y);if(d1>0)dist=Math.max(1,Math.min(40,dist*d0/d1));pan(dx/2,dy/2)}
+p.x=e.clientX;p.y=e.clientY;upd()});
+function end(e){if(zone(e,'up'))return;const p=P.get(e.pointerId);P.delete(e.pointerId);if(P.size)return;
+if(sculpting){sculpting=false}else if(p&&moved<8&&e.type==='pointerup'){if(mode==='obj'||mode==='file'){const h=hit(e.clientX,e.clientY,objs);pick(h?h.object:null)}else if(mode==='edit'&&sel){if(lcOn)lcTap(e.clientX,e.clientY);else if(pbOn)pbTap(e.clientX,e.clientY);else pickEdit(e.clientX,e.clientY)}}}
+cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
+cv.addEventListener('wheel',e=>{e.preventDefault();dist=Math.max(1,Math.min(40,dist*(1+e.deltaY*.001)));upd()},{passive:false});
+cv.addEventListener('contextmenu',e=>e.preventDefault());
+loading=true;add('cube');loading=false;rs();upd();
+if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)$('#inst').hidden=true;
+$('#inst').onclick=()=>{$('#help').hidden=false};
+document.querySelector('header').addEventListener('click',e=>{const b=e.target.closest('button[data-a]');if(b)(b.dataset.a==='undo'?undo:rdo)()});
+$('#ctx').addEventListener('pointerdown',e=>{const t=e.target;if(t.tagName==='INPUT'&&['ax','col','ior','rg','ts'].includes(t.dataset.k))push()});
+$('#fb').onclick=()=>setMode('file');
+$('#pt').onclick=()=>{document.body.classList.toggle('pc');setTimeout(rs,60)};
+$('#lgb').onclick=()=>{$('#lg').hidden=false};
+$('#lg').onclick=e=>{const b=e.target.closest('button');if(b&&b.dataset.l)setLang(b.dataset.l);if(e.target.id==='lg'||b)$('#lg').hidden=true};
+let L0=null;try{L0=localStorage.getItem('a3d-lang')}catch(x){}if(!L0){const n=(navigator.language||'fr').slice(0,2);L0=LN[n]?n:'fr'}if(L0!=='fr')setLang(L0);
+$('#help').onclick=e=>{if(e.target.id==='help'||e.target.tagName==='BUTTON')$('#help').hidden=true};
+(function loop(){requestAnimationFrame(loop);if(sel)hm.userData.u.value=dist*.005/Math.max(sel.scale.x,.1);const gl=objs.filter(o=>o.material.userData.glass);
+if(gl.length){const w=Math.max(2,cv.width>>1),h=Math.max(2,cv.height>>1);if(RT.width!==w||RT.height!==h)RT.setSize(w,h);BG.uRes.value.set(cv.width,cv.height);gl.forEach(o=>{o.visible=false});R.setRenderTarget(RT);R.render(scene,cam);R.setRenderTarget(null);gl.forEach(o=>{o.visible=true})}
+R.render(scene,cam)})();
+</script>
+</body>
+</html>
